@@ -15,22 +15,17 @@ export class DoctorControllerImpl implements DoctorController {
     constructor ( doctorService: DoctorService ){
         this.doctorService = doctorService
     }
-    public getAllDoctors(req: Request, res: Response): void {
+    public async getAllDoctors(req: Request, res: Response): Promise<void> {
         try {
-            this.doctorService.getAllDoctors()
-            .then (
-                (doctors) => {
-                    res.json(doctors)
-                }
-            )  
+            const doctors = await this.doctorService.getAllDoctors()
+            res.status(200).json(doctors) 
         } catch (error) {
-            logger.error(error)
-            res.json({message:"Error getting all doctors"})
+            res.status(400).json({message:"Error getting all doctors"})
         }
     }
     public createDoctor(req: Request, res: Response): void {
         const doctorReq = req.body
-        try {
+    
             this.doctorService.createDoctor(doctorReq)
             .then(
                 (doctor) =>{
@@ -38,14 +33,10 @@ export class DoctorControllerImpl implements DoctorController {
                 },
                 (error) => {
                     console.log(error)
-                    res.status(400).json({message: "Esto es el reject"})
+                    res.status(400).json({message: "Error creating a doctor"})
                 }
             )
-        } catch (error) {
-            logger.error(error)
-            res.status(400).json({message: "Error creating doctor"})
-        }
-        
+ 
     }
     
 }
