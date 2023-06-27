@@ -1,5 +1,4 @@
 import {Router} from 'express'
-import logger from '../../../utils/logger'
 import { DoctorController, DoctorControllerImpl } from './controller'
 import { DoctorServiceImpl } from './service'
 import { DoctorRepository } from './repository'
@@ -12,5 +11,6 @@ const doctorController: DoctorController = new DoctorControllerImpl(doctorServic
 
 router.get('', doctorController.getAllDoctors.bind(doctorController))
 router.post('/create', doctorController.createDoctor.bind(doctorController))
+router.get('/:id', doctorController.getDoctorById.bind(doctorController))
 
 export default router 

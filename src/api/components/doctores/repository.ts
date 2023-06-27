@@ -1,6 +1,7 @@
 import { db } from "../../../config/database"
 import { Doctor, DoctorReq } from "./model"
 import logger from '../../../utils/logger'
+import { DoctorCreationError, DoctorGetAllError, RecordNotFoundError } from "../../../config/customErrors"
 
 export class DoctorRepository {
     public async createDoctor(doctor: DoctorReq): Promise<Doctor> {
@@ -8,7 +9,7 @@ export class DoctorRepository {
             const createdDoctor : any = await db('doctores').insert(doctor).returning('*') //select * from doctores where id_doctor=?
             return createdDoctor
         } catch (error) {
-            throw new Error (`Error creating doctor: ${error}`)
+            throw new DoctorCreationError(`Failed to create doctor dubt: ${error}`)
         }
     }
 
@@ -17,7 +18,18 @@ export class DoctorRepository {
             const doctors : any = await db.select('*').from('doctores') //select * from doctores 
             return doctors
         } catch (error) {
-            throw new Error (`Error getting all doctors: ${error}`)
+            throw new DoctorGetAllError()
+        }
+    }
+
+    public async getDoctorById (id: number): Promise<Doctor> {
+        try{
+            logger.info(id)
+            const doctor = await db('doctores').where({ id_doctor:id}).first()
+            return doctor
+        } catch (error){
+            logger.error(`Failed get doctor by id in repository ${{error}}`)
+            throw new RecordNotFoundError()
         }
     }
 }

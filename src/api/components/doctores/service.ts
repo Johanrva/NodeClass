@@ -1,9 +1,12 @@
+import { DoctorCreationError, RecordNotFoundError } from "../../../config/customErrors"
+import logger from "../../../utils/logger"
 import { Doctor, DoctorReq } from "./model"
 import { DoctorRepository } from "./repository"
 
 export interface DoctorService {
     getAllDoctors(): Promise<Doctor[]>
     createDoctor(doctorReq: DoctorReq): Promise <Doctor> 
+    getDoctorById (id: number): Promise <Doctor>
 }
 
 export class DoctorServiceImpl implements DoctorService {
@@ -18,7 +21,19 @@ export class DoctorServiceImpl implements DoctorService {
     }
 
     public async createDoctor(doctorReq: DoctorReq): Promise<Doctor> {
-        const createdDoctor: Promise<Doctor> = this.doctorRepository.createDoctor(doctorReq) 
-        return createdDoctor
+        try {
+            return this.doctorRepository.createDoctor(doctorReq)
+        } catch (error) {
+            throw new DoctorCreationError("Failed to create doctor service")
+        }
+    }
+
+    public getDoctorById (id: number): Promise <Doctor>{
+        try {
+            return this.doctorRepository.getDoctorById(id)
+        } catch (error){
+            logger.error(`Failed to get doctor from service`)
+            throw new RecordNotFoundError ()
+        }
     }
 }

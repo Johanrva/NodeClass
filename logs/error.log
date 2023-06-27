@@ -1,0 +1,67 @@
+2023-06-27T01:21:18.628Z-error: Unexpected token } in JSON at position 98
+2023-06-27T01:25:51.454Z-error: Unexpected token } in JSON at position 98
+2023-06-27T01:26:13.232Z-error: Unexpected token ' in JSON at position 17
+2023-06-27T01:32:51.516Z-error: database "gestion_cita1" does not exist
+2023-06-27T01:40:37.456Z-error: database "gestion_cita1" does not exist
+2023-06-27T01:40:37.457Z-error: Error creating doctor: error: database "gestion_cita1" does not exist
+2023-06-27T01:47:58.821Z-error: Error creating doctor: error: database "gestion_cita1" does not exist
+2023-06-27T01:49:53.059Z-error: Internal Server Error
+2023-06-27T01:51:37.498Z-error: Internal Server Error
+2023-06-27T01:55:16.345Z-error: Internal Server Error
+2023-06-27T01:56:12.028Z-error: Internal Server Error
+2023-06-27T01:58:30.355Z-error: Internal Server Error
+2023-06-27T01:59:01.302Z-error: Internal Server Error
+2023-06-27T01:59:25.024Z-error: Internal Server Error
+2023-06-27T02:00:21.178Z-error: Internal Server Error
+2023-06-27T02:01:08.224Z-error: Internal Server Error
+2023-06-27T02:02:44.525Z-error: Internal Server Error
+2023-06-27T02:06:19.746Z-error: Internal Server Error
+2023-06-27T02:07:34.490Z-error: Internal Server Error
+2023-06-27T02:08:31.577Z-error: Internal Server Error
+2023-06-27T02:20:32.414Z-error: Internal Server Error
+2023-06-27T02:21:15.779Z-error: Failed to create a doctor
+2023-06-27T02:24:00.394Z-error: Failed to create a doctor
+2023-06-27T02:26:59.579Z-error: Failed to create doctor from repository
+2023-06-27T02:28:33.727Z-error: Failed to create doctor dubt: error: database "gestion_cita1" does not exist
+2023-06-27T02:40:08.146Z-error: Failed to create doctor dubt: error: database "gestion_cita1" does not exist
+2023-06-27T02:40:45.119Z-error: Failed to create doctor dubt: error: database "gestion_cita1" does not exist
+2023-06-27T02:43:17.486Z-error: Failed to create doctor dubt: error: database "gestion_cita1" does not exist
+2023-06-27T03:58:50.981Z-error: Record has not found yet
+2023-06-27T04:06:37.214Z-error: Record has not found yet
+2023-06-27T04:07:29.375Z-error: Record has not found yet
+2023-06-27T04:10:09.642Z-error: Failed get doctor by id in repository [object Object]
+2023-06-27T04:10:09.643Z-error: Record has not found yet
+2023-06-27T04:11:13.247Z-error: Record has not found yet
+2023-06-27T04:27:31.034Z-error: Internal Server Error
+2023-06-27T04:29:13.269Z-error: Internal Server Error
+2023-06-27T04:29:38.496Z-error: Internal Server Error
+2023-06-27T04:33:22.264Z-error: Internal Server Error
+2023-06-27T04:33:22.275Z-error: Record has not found yet
+2023-06-27T04:34:06.106Z-error: Internal Server Error
+2023-06-27T04:34:06.115Z-error: Record has not found yet
+2023-06-27T04:34:38.603Z-error: Internal Server Error
+2023-06-27T04:34:38.615Z-error: Record has not found yet
+2023-06-27T04:39:02.007Z-error: Internal Server Error
+2023-06-27T04:39:02.021Z-error: Record has not found yet
+2023-06-27T04:39:02.022Z-error: Internal Server Error
+2023-06-27T04:39:30.234Z-error: Internal Server Error
+2023-06-27T04:39:30.246Z-error: Record has not found yet
+2023-06-27T04:39:30.247Z-error: Internal Server Error
+2023-06-27T04:50:46.633Z-error: Internal Server Error
+2023-06-27T04:50:46.645Z-error: Record has not found yet
+2023-06-27T04:50:46.648Z-error: Internal Server Error
+2023-06-27T04:50:57.756Z-error: Internal Server Error
+2023-06-27T04:50:57.770Z-error: Record has not found yet
+2023-06-27T04:50:57.772Z-error: Internal Server Error
+2023-06-27T04:51:18.011Z-error: Internal Server Error
+2023-06-27T04:51:18.021Z-error: Record has not found yet
+2023-06-27T04:51:18.023Z-error: Internal Server Error
+2023-06-27T04:54:33.906Z-error: Internal Server Error
+2023-06-27T04:54:33.915Z-error: Record has not found yet
+2023-06-27T04:54:33.917Z-error: Internal Server Error
+2023-06-27T04:59:02.973Z-error: Internal Server Error
+2023-06-27T04:59:02.983Z-error: Record has not found yet
+2023-06-27T04:59:02.985Z-error: Internal Server Error
+2023-06-27T05:00:48.383Z-error: Internal Server Error
+2023-06-27T05:00:48.393Z-error: Record has not found yet
+2023-06-27T05:00:48.395Z-error: Internal Server Error

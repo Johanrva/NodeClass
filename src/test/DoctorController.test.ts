@@ -13,7 +13,8 @@ describe ('DoctorController', () => {
     beforeEach ( () => {
         doctorService = {
             getAllDoctors : jest.fn(),
-            createDoctor : jest.fn()
+            createDoctor : jest.fn(),
+            getDoctorById: jest.fn()
         }
         doctorController = new DoctorControllerImpl(doctorService)
         mockRes.status = jest.fn().mockReturnThis()
@@ -74,9 +75,51 @@ describe ('DoctorController', () => {
             await doctorController.createDoctor(mockReq, mockRes)
 
             expect(doctorService.createDoctor).toHaveBeenCalledWith({})
-            expect(mockRes.json).toHaveBeenCalledWith({message:"Error creating a doctor"})
+            expect(mockRes.json).toHaveBeenCalledWith({message:"Internal Server Error"})
             expect(mockRes.status).toHaveBeenCalledWith(400)
 
         })
     })
+
+    describe ('getDoctorById', () => {
+        it('should get doctor by id', async () => {
+            //Mock Process
+            const doctorRes: Doctor = {id_doctor : 1, nombre: 'Carlos', apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};            
+            (mockReq.params) = {id: "1"};
+            (doctorService.getDoctorById as jest.Mock).mockResolvedValue(doctorRes)
+            // Method excecution
+            await doctorController.getDoctorById(mockReq, mockRes)
+            //Asserts
+            expect(doctorService.getDoctorById).toHaveBeenCalledWith(1)
+            expect(mockRes.json).toHaveBeenCalledWith(doctorRes)
+            expect(mockRes.status).toHaveBeenCalledWith(200)
+        })
+
+        it('should return 400 status if doctor not found', async () => {
+            (mockReq.params) = {id:"1"} ;
+            (doctorService.getDoctorById as jest.Mock).mockResolvedValue(null)
+
+            await doctorController.getDoctorById(mockReq, mockRes)
+
+            expect(doctorService.getDoctorById).toHaveBeenCalledWith(1)
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Record has not found yet"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
+
+        })
+
+        it('should return 400 status if an error occurs', async () => {
+            const error = new Error ('Internal Server Error');
+            (mockReq.params) = {id:"1"} ;
+            (doctorService.getDoctorById as jest.Mock).mockRejectedValue(error)
+
+            await doctorController.getDoctorById(mockReq, mockRes)
+
+            expect(doctorService.getDoctorById).toHaveBeenCalledWith(1)
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to retrieve doctor"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
+
+        })
+    })
+
+
 })
