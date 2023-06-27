@@ -12,5 +12,6 @@ const doctorController: DoctorController = new DoctorControllerImpl(doctorServic
 router.get('', doctorController.getAllDoctors.bind(doctorController))
 router.post('/create', doctorController.createDoctor.bind(doctorController))
 router.get('/:id', doctorController.getDoctorById.bind(doctorController))
+router.put('/:id', doctorController.updateDoctor.bind(doctorController))
 
 export default router 

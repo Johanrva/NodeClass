@@ -11,7 +11,19 @@ class DoctorCreationError extends Error {
         this.name = "DoctorCreationError"
     }
 }
+class DoctorUpdateError extends Error {
+    constructor(){
+        super("Failed to update doctor")
+        this.name = "DoctorUpdateError"
+    }
+}
 
+class DoctorDeleteError extends Error {
+    constructor(){
+        super("Failed to delete doctor")
+        this.name = "DoctorDeleteError"
+    }
+}
 class RecordNotFoundError extends Error {
     constructor(){
         super("Record has not found yet")
@@ -21,5 +33,7 @@ class RecordNotFoundError extends Error {
 export {
     DoctorGetAllError,
     DoctorCreationError,
-    RecordNotFoundError
+    RecordNotFoundError,
+    DoctorUpdateError,
+    DoctorDeleteError
 }
