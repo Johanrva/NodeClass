@@ -5,6 +5,12 @@ class DoctorGetAllError extends Error {
     }
 }
 
+class PatientGetAllError extends Error {
+    constructor(){
+        super("Failed to retrieve patient list")
+        this.name = "PatientGetAllError"
+    }
+}
 class DoctorCreationError extends Error {
     constructor(public message: string){
         super(message)
@@ -35,5 +41,6 @@ export {
     DoctorCreationError,
     RecordNotFoundError,
     DoctorUpdateError,
-    DoctorDeleteError
+    DoctorDeleteError,
+    PatientGetAllError
 }

@@ -8,4 +8,10 @@ export interface Patient {
     upadteAt: Date
 }
 
+export interface PatientReq {
+    nombre: string
+    apellido: string
+    identificacion: string
+    telefono?: number
+}
 

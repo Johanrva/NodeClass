@@ -126,3 +126,50 @@ info: [object Object],[object Object]
 2023-06-27T16:43:19.802Z-error: Failed to update doctor from service
 2023-06-27T16:43:19.804Z-error: Failed to update doctor
 2023-06-27T16:45:29.565Z-info: Server is listening on port 8087
+2023-06-28T03:48:54.592Z-info: Server is listening on port 8087
+2023-06-28T04:39:45.890Z-info: Server is listening on port 8087
+2023-06-28T04:43:39.710Z-error: Failed to create doctor dubt: error: database "gestion_citas" does not exist
+2023-06-28T05:01:44.483Z-error: Failed get doctor by id in repository [object Object]
+2023-06-28T05:01:44.484Z-error: Failed to update doctor from service
+2023-06-28T05:01:44.486Z-error: Failed to update doctor
+2023-06-28T05:01:59.873Z-error: Failed get doctor by id in repository [object Object]
+2023-06-28T05:01:59.873Z-error: Record has not found yet
+2023-06-28T05:10:54.529Z-error: Failed to create doctor dubt: error: database "gestion_citas" does not exist
+2023-06-28T05:16:53.633Z-info: Server is listening on port 8087
+2023-06-28T05:23:41.822Z-error: Failed get doctor by id in repository [object Object]
+2023-06-28T05:23:41.823Z-error: Failed to update doctor from service
+2023-06-28T05:23:41.824Z-error: Failed to update doctor
+2023-06-28T05:25:23.788Z-info: Server is listening on port 8087
+2023-06-28T05:28:16.618Z-info: Server is listening on port 8087
+2023-06-28T05:34:21.372Z-info: Server is listening on port 8087
+2023-06-28T15:19:21.448Z-info: Server is listening on port 8087
+2023-06-28T16:18:40.954Z-info: Server is listening on port 8087
+2023-06-28T16:21:13.428Z-error: Record has not found yet
+2023-06-28T16:31:52.192Z-info: Server is listening on port 8087
+2023-06-28T16:32:01.333Z-error: Id must be a number
+2023-06-28T20:24:22.785Z-info: Server is listening on port 8087
+2023-06-28T20:24:35.152Z-error: Failed to create appointment from service
+2023-06-28T20:30:26.278Z-info: Server is listening on port 8087
+2023-06-28T20:30:31.342Z-error: Failed to create appointment from service
+2023-06-28T20:31:21.783Z-info: Server is listening on port 8087
+2023-06-28T20:31:30.057Z-error: Failed to create appointment from service
+2023-06-28T20:33:55.747Z-info: Server is listening on port 8087
+2023-06-28T20:34:01.982Z-error: Failed to create appointment from service
+2023-06-28T20:36:14.027Z-info: Server is listening on port 8087
+2023-06-28T20:36:18.549Z-error: Failed to create appointment from service
+2023-06-28T20:36:21.627Z-error: Failed to create appointment from service
+2023-06-28T20:39:46.073Z-info: Server is listening on port 8087
+2023-06-28T20:44:10.804Z-error: Failed to create appointment from service
+2023-06-28T20:55:26.987Z-info: Server is listening on port 8087
+2023-06-28T20:55:49.982Z-error: Failed to create appointment from service
+2023-06-28T20:56:00.240Z-error: Failed to create appointment from service
+2023-06-28T20:59:05.245Z-error: Failed to create appointment from service
+2023-06-28T21:04:28.703Z-info: Server is listening on port 8087
+2023-06-28T21:04:33.261Z-error: Failed to create appointment dubt: error: insert into "citas" ("especialidad", "horario", "id_doctor", "identificacion_paciente") values ($1, $2, $3, $4) returning * - insert or update on table "citas" violates foreign key constraint "fk_pacientes"
+2023-06-28T21:04:33.263Z-error: Failed to create appointment from service
+2023-06-28T21:53:57.328Z-info: Server is listening on port 8087
+2023-06-28T21:54:26.037Z-error: Failed to get appointment from service
+2023-06-28T21:54:26.038Z-error: Record has not found yet
+2023-06-28T21:57:39.989Z-info: Server is listening on port 8087
+2023-06-28T21:58:01.381Z-error: Failed to get appointment from service
+2023-06-28T21:58:01.382Z-error: Record has not found yet

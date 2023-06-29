@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS pacientes (
     id_paciente bigserial,
     nombre VARCHAR,
     apellido VARCHAR, 
-    identificacion VARCHAR,
+    identificacion VARCHAR UNIQUE,
     telefono INT,
     created_at timestamptz,
     update_at timestamptz,
@@ -30,11 +30,11 @@ CREATE TABLE IF NOT EXISTS citas (
     identificacion_paciente VARCHAR,
     created_at timestamptz,
     updated_at timestamptz,
-    PRIMARY key(id_cita)
+    PRIMARY key(id_cita),
     CONSTRAINT fk_doctores 
     FOREIGN KEY (id_doctor)
     REFERENCES doctores(id_doctor),
     CONSTRAINT fk_pacientes 
     FOREIGN KEY (identificacion_paciente)
-    REFERENCES pacientes(identificacion),
+    REFERENCES pacientes(identificacion)
 );

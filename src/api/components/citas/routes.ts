@@ -1,13 +1,17 @@
-import express, {Router, Request, Response } from 'express'
-import logger from '../../../utils/logger'
+import { Router } from 'express'
 import { AppointmentController, AppointmentControllerImpl } from './controller'
 import { AppointmentServiceImpl } from './service'
+import { AppointmentRepository } from './repository'
+import { DoctorRepository } from '../doctores/repository'
 
 const router = Router ()
-const appointmentService = new AppointmentServiceImpl()
-const appointmentController: AppointmentController = new AppointmentControllerImpl(appointmentService)
+const repository = new AppointmentRepository()
+const repositoryDoctor = new DoctorRepository()
+const service = new AppointmentServiceImpl(repository, repositoryDoctor)
+const controller: AppointmentController = new AppointmentControllerImpl(service)
 
-router.post('/create', appointmentController.createAppointment.bind(appointmentController))
-router.get('/list', appointmentController.getAllAppointments.bind(appointmentController))
+router.get('', controller.getAllAppointments.bind(controller))
+router.post('/create', controller.createAppointment.bind(controller))
+router.get('/:id', controller.getAppointmentById.bind(controller))
 
 export default router 

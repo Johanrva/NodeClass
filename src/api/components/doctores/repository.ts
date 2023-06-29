@@ -50,3 +50,7 @@ export class DoctorRepository {
         }
     }
 }
+
+export default {
+    DoctorRepository
+}
