@@ -95,3 +95,13 @@
 2023-06-28T21:54:26.038Z-error: Record has not found yet
 2023-06-28T21:58:01.381Z-error: Failed to get appointment from service
 2023-06-28T21:58:01.382Z-error: Record has not found yet
+2023-06-29T01:56:07.579Z-error: Failed get appointment by id in repository [object Object]
+2023-06-29T01:56:07.581Z-error: Failed to get appointment from service
+2023-06-29T01:56:07.582Z-error: Record has not found yet
+2023-06-29T02:06:26.034Z-error: Failed getting appointments from repository
+2023-06-29T02:06:28.210Z-error: Failed getting appointments from repository
+2023-06-29T02:09:07.466Z-error: Failed getting appointments from repository
+2023-06-29T02:09:07.467Z-error: Failed getting appointments from service
+2023-06-29T02:09:09.109Z-error: Failed getting appointments from repository
+2023-06-29T02:09:09.111Z-error: Failed getting appointments from service
+2023-06-29T02:12:25.300Z-error: Failed getting appointments from repository

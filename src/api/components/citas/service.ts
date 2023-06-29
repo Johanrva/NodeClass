@@ -1,4 +1,4 @@
-import { DoctorCreationError, DoctorDeleteError, DoctorUpdateError, RecordNotFoundError } from "../../../config/customErrors"
+import { DoctorCreationError, DoctorDeleteError, DoctorUpdateError, GetAllError, RecordNotFoundError } from "../../../config/customErrors"
 import logger from "../../../utils/logger"
 import { Appointment, AppointmentReq, AppointmentResDB } from "./model"
 import { AppointmentRepository } from "./repository"
@@ -18,9 +18,16 @@ export class AppointmentServiceImpl implements AppointmentService {
         this.appointmentRepository = appointmentRepository
         this.doctorRepository = doctorRepository
     }
-    public getAllAppointments(): Promise<Appointment[]> {
-        const patients: Promise <Appointment[]> = this.appointmentRepository.getAllAppointments()
-        return patients
+    public async getAllAppointments(): Promise<Appointment[]> {
+        try {
+            const patients = await this.appointmentRepository.getAllAppointments()
+            console.log("llegamos")
+            console.log(patients)
+            return patients
+        } catch (error) {
+            logger.error(error)
+            throw new GetAllError("Failed getting appointments from service", "appointments")
+        }
     }
 
     public async createAppointment(appointmentReq: AppointmentReq): Promise<Appointment> {

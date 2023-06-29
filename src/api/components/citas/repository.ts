@@ -1,7 +1,7 @@
 import { db } from "../../../config/database"
 import { Appointment, AppointmentReq, AppointmentResDB } from "./model"
 import logger from '../../../utils/logger'
-import { DoctorCreationError, PatientGetAllError, RecordNotFoundError } from "../../../config/customErrors"
+import { DoctorCreationError, GetAllError, PatientGetAllError, RecordNotFoundError } from "../../../config/customErrors"
 
 export class AppointmentRepository {
     public async createAppointment(appointment: AppointmentReq): Promise<AppointmentResDB> {
@@ -18,7 +18,7 @@ export class AppointmentRepository {
             const appointments : any = await db.select('*').from('citas')  
             return appointments
         } catch (error) {
-            throw new PatientGetAllError()
+            throw new GetAllError("Failed getting appointments from repository", "appointments")
         }
     }
 
