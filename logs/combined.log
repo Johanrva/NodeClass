@@ -195,3 +195,6 @@ info: [object Object],[object Object]
 2023-06-29T02:43:41.926Z-info: Server is listening on port 8087
 2023-06-29T02:45:58.723Z-info: Server is listening on port 8087
 2023-06-29T02:47:00.449Z-info: Server is listening on port 8087
+2023-06-29T22:04:56.617Z-info: Server is listening on port 8087
+2023-06-29T22:06:29.332Z-error: Failed to create doctor dubt: error: insert into "doctores" ("apellido", "consultorio", "create_at", "especialidad", "nombre") values ($1, $2, $3, $4, $5) returning * - column "create_at" of relation "doctores" does not exist
+2023-06-29T22:08:11.180Z-info: Server is listening on port 8087

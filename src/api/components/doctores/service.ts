@@ -24,6 +24,7 @@ export class DoctorServiceImpl implements DoctorService {
 
     public async createDoctor(doctorReq: DoctorReq): Promise<Doctor> {
         try {
+            doctorReq.created_at = new Date ()
             return this.doctorRepository.createDoctor(doctorReq)
         } catch (error) {
             throw new DoctorCreationError("Failed to create doctor service")
