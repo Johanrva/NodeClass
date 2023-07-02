@@ -1,4 +1,4 @@
-import { DoctorCreationError, DoctorDeleteError, DoctorUpdateError, RecordNotFoundError } from "../../../utils/customErrors"
+import { CreationError, DeleteError, UpdateError, RecordNotFoundError } from "../../../utils/customErrors"
 import logger from "../../../utils/logger"
 import { Patient, PatientReq } from "./model"
 import { PatientRepository } from "./repository"
@@ -26,7 +26,7 @@ export class PatientServiceImpl implements PatientService {
             patientReq.update_at = new Date ()
             return this.patientRepository.createPatient(patientReq)
         } catch (error) {
-            throw new DoctorCreationError("Failed to create patient service")
+            throw new CreationError("Failed to create patient", "PatientService")
         }
     }
 

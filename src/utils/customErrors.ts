@@ -1,53 +1,42 @@
-class DoctorGetAllError extends Error {
-    constructor(){
-        super("Failed to retrieve doctor list")
-        this.name = "DoctorGetAllError"
-    }
-}
-
 class GetAllError extends Error {
     constructor(message: string, componentName?: string){
         super(message)
         this.name = `${componentName} GetAllError` 
     }
 }
-class PatientGetAllError extends Error {
-    constructor(){
-        super("Failed to retrieve patient list")
-        this.name = "PatientGetAllError"
-    }
-}
-class DoctorCreationError extends Error {
-    constructor(public message: string){
+
+class CreationError extends Error {
+    constructor(message: string, componentName?: string){
         super(message)
-        this.name = "DoctorCreationError"
-    }
-}
-class DoctorUpdateError extends Error {
-    constructor(){
-        super("Failed to update doctor")
-        this.name = "DoctorUpdateError"
+        this.name = `${componentName} CreationError` 
     }
 }
 
-class DoctorDeleteError extends Error {
-    constructor(){
-        super("Failed to delete doctor")
-        this.name = "DoctorDeleteError"
+class UpdateError extends Error {
+    constructor(message: string, componentName?: string){
+        super(message)
+        this.name = `${componentName} UpdateError` 
     }
 }
+
+class DeleteError extends Error {
+    constructor(message: string, componentName?: string){
+        super(message)
+        this.name = `${componentName} DeleteError` 
+    }
+}
+
 class RecordNotFoundError extends Error {
     constructor(){
         super("Record has not found yet")
         this.name = "RecordNotFound"
     }
 }
+
 export {
-    DoctorGetAllError,
-    DoctorCreationError,
-    RecordNotFoundError,
-    DoctorUpdateError,
-    DoctorDeleteError,
-    PatientGetAllError,
-    GetAllError
+    GetAllError,
+    CreationError,
+    UpdateError,
+    DeleteError,
+    RecordNotFoundError
 }

@@ -111,3 +111,31 @@
 2023-07-02T17:36:19.584Z-error: Failed to create patient dubt: error: insert into "pacientes" ("apellido", "created_At", "identificacion", "nombre", "update_At") values ($1, $2, $3, $4, $5) returning * - column "created_At" of relation "pacientes" does not exist
 2023-07-02T18:02:05.971Z-error: Record has not found yet
 2023-07-02T18:02:09.840Z-error: Record has not found yet
+2023-07-02T18:50:33.150Z-error: Failed get doctor by id in repository [object Object]
+2023-07-02T18:50:33.151Z-error: Failed to delete doctor from service
+2023-07-02T18:50:33.157Z-error: Failed to delete doctor
+2023-07-02T18:50:40.578Z-error: Failed get doctor by id in repository [object Object]
+2023-07-02T18:50:40.580Z-error: Failed to update doctor from service
+2023-07-02T18:50:40.581Z-error: Failed to update doctor
+2023-07-02T18:50:54.836Z-error: Failed to create doctor
+2023-07-02T18:51:05.112Z-error: Failed to create patient
+2023-07-02T18:51:10.001Z-error: Failed to create appointment
+2023-07-02T18:51:10.003Z-error: Failed to create appointment
+2023-07-02T18:51:21.014Z-error: Failed to create appointment
+2023-07-02T18:51:21.016Z-error: Failed to create appointment
+2023-07-02T18:51:25.721Z-error: Failed getting appointments from repository
+2023-07-02T18:52:40.756Z-error: Failed to delete doctor from service
+2023-07-02T18:52:40.757Z-error: Failed to delete doctor
+2023-07-02T18:52:51.302Z-error: Failed to delete doctor from service
+2023-07-02T18:52:51.303Z-error: Failed to delete doctor
+2023-07-02T18:53:36.263Z-error: Failed to update doctor from service
+2023-07-02T18:53:36.265Z-error: Failed to update doctor
+2023-07-02T18:54:28.104Z-error: Failed to create patient
+2023-07-02T18:56:03.504Z-error: Failed to create appointment
+2023-07-02T18:56:03.506Z-error: Failed to create appointment
+2023-07-02T18:56:32.353Z-error: Failed to create appointment
+2023-07-02T18:56:32.354Z-error: Failed to create appointment
+2023-07-02T18:56:47.264Z-error: Failed to create appointment
+2023-07-02T18:56:47.265Z-error: Failed to create appointment
+2023-07-02T18:57:16.092Z-error: Failed to create appointment
+2023-07-02T18:57:16.093Z-error: Failed to create appointment

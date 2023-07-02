@@ -1,7 +1,7 @@
 import { db } from "../../../config/database"
 import { Patient, PatientReq } from "./model"
 import logger from '../../../utils/logger'
-import { DoctorCreationError, PatientGetAllError, RecordNotFoundError } from "../../../utils/customErrors"
+import { CreationError, GetAllError, RecordNotFoundError } from "../../../utils/customErrors"
 
 export class PatientRepository {
     public async createPatient(patient: PatientReq): Promise<Patient> {
@@ -9,7 +9,7 @@ export class PatientRepository {
             const [createdPatient] : any = await db('pacientes').insert(patient).returning('*') 
             return createdPatient
         } catch (error) {
-            throw new DoctorCreationError(`Failed to create patient dubt: ${error}`)
+            throw new CreationError(`Failed to create patient`, "PatientRepository")
         }
     }
 
@@ -18,7 +18,7 @@ export class PatientRepository {
             const patients : any = await db.select('*').from('pacientes') //select * from doctores 
             return patients
         } catch (error) {
-            throw new PatientGetAllError()
+            throw new GetAllError("Failed getting all patients", "PatientRepository")
         }
     }
 
