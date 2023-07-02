@@ -37,7 +37,7 @@ export class AppointmentControllerImpl implements AppointmentController {
                 if (error instanceof CreationError){
                     res.status(400).json({
                         error_name: error.name,
-                        message: "Failed Creating appointment"
+                        message: error.message
                     })    
                 } else {
                     res.status(400).json({

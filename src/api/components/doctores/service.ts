@@ -28,7 +28,7 @@ export class DoctorServiceImpl implements DoctorService {
             doctorReq.update_at = new Date ()          
             return this.doctorRepository.createDoctor(doctorReq)
         } catch (error) {
-            throw new CreationError("Failed to create doctor",'DoctorService')
+            throw new CreationError("Failed to create doctor",'Doctor')
         }
     }
 
@@ -53,7 +53,7 @@ export class DoctorServiceImpl implements DoctorService {
             return updateDoctor
         } catch (error){
             logger.error(`Failed to update doctor from service`)
-            throw new UpdateError('Failed to update doctor', 'DoctorService')
+            throw new UpdateError('Failed to update doctor', 'Doctor')
         }
     }
 
@@ -66,7 +66,7 @@ export class DoctorServiceImpl implements DoctorService {
             await this.doctorRepository.deleteDoctor(id)
         } catch (error){
             logger.error(`Failed to delete doctor from service`)
-            throw new DeleteError ("Failed to delete doctor", "DoctorService")
+            throw new DeleteError ("Failed to delete doctor", "Doctor")
         }
     }
 }

@@ -9,7 +9,7 @@ export class AppointmentRepository {
             const [createdAppointment] = await db('citas').insert(appointment).returning('*') 
             return createdAppointment
         } catch (error) {
-            throw new CreationError('Failed to create appointment', "AppointmentRepository")
+            throw new CreationError('Failed to create appointment', "Appointment")
         }
     }
 
@@ -18,7 +18,7 @@ export class AppointmentRepository {
             const appointments : any = await db.select('*').from('citas')  
             return appointments
         } catch (error) {
-            throw new GetAllError('Failed getting appointments from repository', "AppointmentRepository")
+            throw new GetAllError('Failed getting appointments from repository', "Appointment")
         }
     }
 

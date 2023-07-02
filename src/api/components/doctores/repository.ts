@@ -18,7 +18,7 @@ export class DoctorRepository {
             const doctors : any = await db.select('*').from('doctores') //select * from doctores 
             return doctors
         } catch (error) {
-            throw new GetAllError('Failed getting all doctors', "DoctorRepository")
+            throw new GetAllError('Failed getting all doctors', "Doctor")
         }
     }
 
@@ -37,7 +37,7 @@ export class DoctorRepository {
             await db('doctores').where({ id_doctor:id}).update(updates)
         } catch (error){
             logger.error(`Failed updated doctor in repository ${{error}}`)
-            throw new UpdateError('Failed updated doctor', "DoctorRepository")
+            throw new UpdateError('Failed updated doctor', "Doctor")
         }
     }
 
@@ -46,7 +46,7 @@ export class DoctorRepository {
             await db('doctores').where({ id_doctor:id}).del()
         } catch (error){
             logger.error(`Failed deleting doctor in repository ${{error}}`)
-            throw new DeleteError('Failed deleting doctor', "DoctorRepository")
+            throw new DeleteError('Failed deleting doctor', "Doctor")
         }
     }
 }

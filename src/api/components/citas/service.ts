@@ -24,19 +24,31 @@ export class AppointmentServiceImpl implements AppointmentService {
             return patients
         } catch (error) {
             logger.error(error)
-            throw new GetAllError("Failed getting appointments from service", "AppointmentService")
+            throw new GetAllError("Failed getting appointments from service", "Appointment")
         }
     }
 
     public async createAppointment(appointmentReq: AppointmentReq): Promise<Appointment> {
         try {
-            const appointmentDB = await this.appointmentRepository.createAppointment(appointmentReq)
-            const doctor = await this.doctorRepository.getDoctorById(appointmentDB.id_doctor)
-            const appointment: Appointment = mapAppointment (appointmentDB, doctor)
-            return appointment
+            const doctor = await this.doctorRepository.getDoctorById(appointmentReq.id_doctor)
+            console.log(doctor)
+            if (doctor) {
+                const appointmentDB = await this.appointmentRepository.createAppointment(appointmentReq)
+                const appointment: Appointment = mapAppointment (appointmentDB, doctor)
+                return appointment
+            } else {
+                throw new RecordNotFoundError()
+            } 
+            
         } catch (error) {
             logger.error(error)
-            throw new CreationError('Failed to create appointment', "AppointmentService")
+            if (error instanceof RecordNotFoundError){
+                throw new CreationError('Doctor not Found', "Appointment")
+            } else {
+                throw new CreationError('Failed to create appointment', "Appointment")
+            }
+            
+            
         }
     }
 

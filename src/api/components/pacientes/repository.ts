@@ -9,7 +9,7 @@ export class PatientRepository {
             const [createdPatient] : any = await db('pacientes').insert(patient).returning('*') 
             return createdPatient
         } catch (error) {
-            throw new CreationError(`Failed to create patient`, "PatientRepository")
+            throw new CreationError(`Failed to create patient`, "Patient")
         }
     }
 
@@ -18,7 +18,7 @@ export class PatientRepository {
             const patients : any = await db.select('*').from('pacientes') //select * from doctores 
             return patients
         } catch (error) {
-            throw new GetAllError("Failed getting all patients", "PatientRepository")
+            throw new GetAllError("Failed getting all patients", "Patient")
         }
     }
 

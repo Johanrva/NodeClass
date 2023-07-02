@@ -26,7 +26,7 @@ export class PatientServiceImpl implements PatientService {
             patientReq.update_at = new Date ()
             return this.patientRepository.createPatient(patientReq)
         } catch (error) {
-            throw new CreationError("Failed to create patient", "PatientService")
+            throw new CreationError("Failed to create patient", "Patient")
         }
     }
 
