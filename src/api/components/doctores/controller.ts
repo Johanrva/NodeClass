@@ -2,7 +2,7 @@ import { Doctor } from "./model"
 import {Request, Response} from 'express'
 import { DoctorService } from "./service"
 import logger from '../../../utils/logger'
-import { DoctorCreationError, DoctorDeleteError, DoctorUpdateError, RecordNotFoundError } from "../../../config/customErrors"
+import { DoctorCreationError, DoctorDeleteError, DoctorUpdateError, RecordNotFoundError } from "../../../utils/customErrors"
 import { createDoctorSchema } from "./validations/doctor.validations"
 
 export interface DoctorController {

@@ -1,11 +1,11 @@
-import { DoctorCreationError, DoctorDeleteError, DoctorUpdateError, RecordNotFoundError } from "../../../config/customErrors"
+import { DoctorCreationError, DoctorDeleteError, DoctorUpdateError, RecordNotFoundError } from "../../../utils/customErrors"
 import logger from "../../../utils/logger"
 import { Patient, PatientReq } from "./model"
 import { PatientRepository } from "./repository"
 
 export interface PatientService {
     getAllPatients() : Promise<Patient[]>
-    createPatient(doctorReq: PatientReq) : Promise <Patient> 
+    createPatient(patientReq: PatientReq) : Promise <Patient> 
     getPatientById (id: number) : Promise <Patient>
 }
 
@@ -22,6 +22,8 @@ export class PatientServiceImpl implements PatientService {
 
     public async createPatient(patientReq: PatientReq): Promise<Patient> {
         try {
+            patientReq.created_at = new Date ()
+            patientReq.update_at = new Date ()
             return this.patientRepository.createPatient(patientReq)
         } catch (error) {
             throw new DoctorCreationError("Failed to create patient service")

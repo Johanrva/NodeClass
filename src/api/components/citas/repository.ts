@@ -1,7 +1,7 @@
 import { db } from "../../../config/database"
 import { Appointment, AppointmentReq, AppointmentResDB } from "./model"
 import logger from '../../../utils/logger'
-import { DoctorCreationError, GetAllError, PatientGetAllError, RecordNotFoundError } from "../../../config/customErrors"
+import { DoctorCreationError, GetAllError, PatientGetAllError, RecordNotFoundError } from "../../../utils/customErrors"
 
 export class AppointmentRepository {
     public async createAppointment(appointment: AppointmentReq): Promise<AppointmentResDB> {
