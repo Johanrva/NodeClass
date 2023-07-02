@@ -198,3 +198,8 @@ info: [object Object],[object Object]
 2023-06-29T22:04:56.617Z-info: Server is listening on port 8087
 2023-06-29T22:06:29.332Z-error: Failed to create doctor dubt: error: insert into "doctores" ("apellido", "consultorio", "create_at", "especialidad", "nombre") values ($1, $2, $3, $4, $5) returning * - column "create_at" of relation "doctores" does not exist
 2023-06-29T22:08:11.180Z-info: Server is listening on port 8087
+2023-07-02T16:48:51.278Z-info: Server is listening on port 8087
+2023-07-02T16:49:17.462Z-error: Failed to create doctor dubt: error: insert into "doctores" ("apellido", "consultorio", "created_at", "especialidad", "nombre", "updated_at") values ($1, $2, $3, $4, $5, $6) returning * - column "updated_at" of relation "doctores" does not exist
+2023-07-02T16:52:10.936Z-info: Server is listening on port 8087
+2023-07-02T16:55:10.989Z-info: Server is listening on port 8087
+2023-07-02T17:03:49.756Z-info: Server is listening on port 8087

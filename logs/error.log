@@ -106,3 +106,4 @@
 2023-06-29T02:09:09.111Z-error: Failed getting appointments from service
 2023-06-29T02:12:25.300Z-error: Failed getting appointments from repository
 2023-06-29T22:06:29.332Z-error: Failed to create doctor dubt: error: insert into "doctores" ("apellido", "consultorio", "create_at", "especialidad", "nombre") values ($1, $2, $3, $4, $5) returning * - column "create_at" of relation "doctores" does not exist
+2023-07-02T16:49:17.462Z-error: Failed to create doctor dubt: error: insert into "doctores" ("apellido", "consultorio", "created_at", "especialidad", "nombre", "updated_at") values ($1, $2, $3, $4, $5, $6) returning * - column "updated_at" of relation "doctores" does not exist

@@ -24,7 +24,8 @@ export class DoctorServiceImpl implements DoctorService {
 
     public async createDoctor(doctorReq: DoctorReq): Promise<Doctor> {
         try {
-            doctorReq.created_at = new Date ()
+            doctorReq.created_at = new Date ()          
+            doctorReq.update_at = new Date ()          
             return this.doctorRepository.createDoctor(doctorReq)
         } catch (error) {
             throw new DoctorCreationError("Failed to create doctor service")
@@ -46,6 +47,7 @@ export class DoctorServiceImpl implements DoctorService {
             if(!existDoctor) {
                 throw new RecordNotFoundError()
             } 
+            updates.update_at = new Date ()
             const updateDoctor = {...existDoctor, ...updates}
             this.doctorRepository.updateDoctor(id, updateDoctor)
             return updateDoctor
