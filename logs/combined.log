@@ -268,3 +268,23 @@ info: [object Object],[object Object]
 2023-07-02T20:11:54.875Z-info: Server is listening on port 8087
 2023-07-02T20:12:04.849Z-error: Record has not found yet
 2023-07-02T20:12:04.850Z-error: Doctor not Found
+2023-07-03T00:56:02.569Z-info: Server is listening on port 8087
+2023-07-03T01:00:01.072Z-error: Failed to get appointment from service
+2023-07-03T01:00:01.074Z-error: Record has not found yet
+2023-07-03T01:01:03.420Z-error: Failed updated patient in repository [object Object]
+2023-07-03T01:14:57.485Z-info: Server is listening on port 8087
+2023-07-03T01:15:04.688Z-error: Failed to update patient from service: RecordNotFound: Record has not found yet
+2023-07-03T01:15:04.689Z-error: Failed to update patient
+2023-07-03T01:16:35.665Z-info: Server is listening on port 8087
+2023-07-03T01:16:38.265Z-error: Failed to update patient from service: RecordNotFound: Record has not found yet
+2023-07-03T01:16:38.266Z-error: Failed to update patient
+2023-07-03T01:20:16.582Z-info: Server is listening on port 8087
+2023-07-03T01:20:23.796Z-error: Record has not found yet
+2023-07-03T01:20:23.797Z-error: Patient not Found
+2023-07-03T01:28:40.627Z-info: Server is listening on port 8087
+2023-07-03T01:28:44.966Z-error: Record has not found yet
+2023-07-03T01:28:44.967Z-error: Patient not Found
+2023-07-03T01:28:55.113Z-error: Failed updated patient in repository [object Object]
+2023-07-03T01:30:59.255Z-info: Server is listening on port 8087
+2023-07-03T01:31:04.442Z-error: Record has not found yet
+2023-07-03T01:31:04.443Z-error: Doctor not Found

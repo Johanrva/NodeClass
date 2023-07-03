@@ -7,6 +7,7 @@ export interface PatientService {
     getAllPatients() : Promise<Patient[]>
     createPatient(patientReq: PatientReq) : Promise <Patient> 
     getPatientById (id: number) : Promise <Patient>
+    updateDoctor (id: number, updates : Partial<PatientReq>): Promise <Patient>
 }
 
 export class PatientServiceImpl implements PatientService {
@@ -36,6 +37,27 @@ export class PatientServiceImpl implements PatientService {
         } catch (error){
             logger.error(`Failed to get patient from service`)
             throw new RecordNotFoundError ()
+        }
+    }
+
+    public async updateDoctor (id: number, updates : Partial<PatientReq>): Promise <Patient>{
+        try {
+            const existPatient = await this.patientRepository.getPatientById(id)
+            if(existPatient) {
+                updates.update_at = new Date ()
+                const updatePatient = {...existPatient, ...updates}
+                this.patientRepository.updatePatient(id, updatePatient)
+                return updatePatient
+            } else {
+                throw new RecordNotFoundError()
+            }
+        } catch (error){
+            logger.error(error)
+            if (error instanceof RecordNotFoundError){
+                throw new UpdateError('Patient not Found', "Patient")
+            } else {
+                throw new UpdateError('Failed to update patient', "Patient")
+            }
         }
     }
 

@@ -44,16 +44,21 @@ export class DoctorServiceImpl implements DoctorService {
     public async updateDoctor (id: number, updates : Partial<DoctorReq>): Promise <Doctor>{
         try {
             const existDoctor = await this.doctorRepository.getDoctorById(id)
-            if(!existDoctor) {
+            if(existDoctor) {
+                updates.update_at = new Date ()
+                const updateDoctor = {...existDoctor, ...updates}
+                this.doctorRepository.updateDoctor(id, updateDoctor)
+                return updateDoctor
+            } else {
                 throw new RecordNotFoundError()
-            } 
-            updates.update_at = new Date ()
-            const updateDoctor = {...existDoctor, ...updates}
-            this.doctorRepository.updateDoctor(id, updateDoctor)
-            return updateDoctor
+            }           
         } catch (error){
-            logger.error(`Failed to update doctor from service`)
-            throw new UpdateError('Failed to update doctor', 'Doctor')
+            logger.error(error)
+            if (error instanceof RecordNotFoundError){
+                throw new UpdateError('Doctor not Found', "Doctor")
+            } else {
+                throw new UpdateError('Failed to update doctor', "Doctor")
+            }
         }
     }
 
@@ -65,8 +70,12 @@ export class DoctorServiceImpl implements DoctorService {
             }
             await this.doctorRepository.deleteDoctor(id)
         } catch (error){
-            logger.error(`Failed to delete doctor from service`)
-            throw new DeleteError ("Failed to delete doctor", "Doctor")
+            logger.error(error)
+            if (error instanceof RecordNotFoundError){
+                throw new CreationError('Doctor not Found', "Doctor")
+            } else {
+                throw new CreationError('Failed to delete doctor', "Doctor")
+            }
         }
     }
 }

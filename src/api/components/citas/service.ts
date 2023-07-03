@@ -31,7 +31,6 @@ export class AppointmentServiceImpl implements AppointmentService {
     public async createAppointment(appointmentReq: AppointmentReq): Promise<Appointment> {
         try {
             const doctor = await this.doctorRepository.getDoctorById(appointmentReq.id_doctor)
-            console.log(doctor)
             if (doctor) {
                 const appointmentDB = await this.appointmentRepository.createAppointment(appointmentReq)
                 const appointment: Appointment = mapAppointment (appointmentDB, doctor)

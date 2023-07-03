@@ -8,6 +8,7 @@ export interface PatientController {
     getAllPatients(req: Request, res: Response): void
     createPatient(req: Request, res: Response): void
     getPatientById (req: Request, res: Response): void
+    updatePatient (req: Request, res: Response): Promise<void>
 }
 
 export class PatientControllerImpl implements PatientController {
@@ -37,7 +38,7 @@ export class PatientControllerImpl implements PatientController {
                 if (error instanceof CreationError){
                     res.status(400).json({
                         error_name: error.name,
-                        message: "Failed Creating a patient"
+                        message: error.message
                     })    
                 } else {
                     res.status(400).json({
@@ -71,4 +72,25 @@ export class PatientControllerImpl implements PatientController {
         }
     }
 
+    public async updatePatient (req: Request, res: Response): Promise<void> {
+        try {
+            const id = parseInt(req.params.id)
+            const patientReq = req.body
+            const patient = await this.patientService.updateDoctor(id, patientReq)
+            if (patient) {
+                res.status(200).json(patient)
+            } else {
+                throw new UpdateError("Failed to update patient", "Patient")
+            }
+        } catch (error) {
+            logger.error(error)
+            if (error instanceof RecordNotFoundError){
+                res.status(400).json({error: error.message})
+            } else if (error instanceof UpdateError){
+                res.status(400).json({error: error.message})
+            }else {
+                res.status(400).json({error: "Failed to update patient"})
+            }      
+        }
+    }
 }
