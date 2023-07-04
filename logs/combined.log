@@ -302,3 +302,40 @@ info: [object Object],[object Object]
 2023-07-04T02:15:31.198Z-error: Failed updated patient in repository [object Object]
 2023-07-04T02:16:09.633Z-info: Server is listening on port 8087
 2023-07-04T02:16:15.435Z-error: Failed updated patient in repository [object Object]
+2023-07-04T02:30:15.699Z-info: Server is listening on port 8087
+2023-07-04T02:33:35.359Z-info: Server is listening on port 8087
+2023-07-04T02:33:59.876Z-info: Server is listening on port 8087
+2023-07-04T02:34:07.165Z-error: Failed deleting patient in repository [object Object]
+2023-07-04T02:37:02.127Z-info: Server is listening on port 8087
+2023-07-04T02:37:09.717Z-error: Record has not found yet
+2023-07-04T02:37:09.718Z-error: Patient not Found
+2023-07-04T02:41:23.035Z-info: Server is listening on port 8087
+2023-07-04T02:41:27.878Z-error: Record has not found yet
+2023-07-04T02:41:27.879Z-error: Patient not Found
+2023-07-04T02:42:40.069Z-info: Server is listening on port 8087
+2023-07-04T02:42:43.681Z-error: Record has not found yet
+2023-07-04T02:42:43.682Z-error: Patient not Found
+2023-07-04T02:46:39.128Z-info: Server is listening on port 8087
+2023-07-04T02:46:52.941Z-error: Record has not found yet
+2023-07-04T02:46:52.943Z-error: Record has not found yet
+2023-07-04T02:48:00.066Z-info: Server is listening on port 8087
+2023-07-04T02:48:33.579Z-info: Server is listening on port 8087
+2023-07-04T02:48:46.337Z-error: Record has not found yet
+2023-07-04T02:48:46.338Z-error: Patient not found
+2023-07-04T02:48:53.158Z-error: Failed deleting patient in repository [object Object]
+2023-07-04T02:49:19.911Z-info: Server is listening on port 8087
+2023-07-04T02:49:25.135Z-error: Record has not found yet
+2023-07-04T02:49:25.136Z-error: Patient not found
+2023-07-04T02:50:14.614Z-error: Record has not found yet
+2023-07-04T02:50:14.616Z-error: Patient not Found
+2023-07-04T02:50:31.111Z-info: Server is listening on port 8087
+2023-07-04T02:50:34.538Z-error: Record has not found yet
+2023-07-04T02:50:34.539Z-error: Patient not Found
+2023-07-04T02:53:11.673Z-info: Server is listening on port 8087
+2023-07-04T02:53:21.778Z-error: Record has not found yet
+2023-07-04T02:53:21.779Z-error: Doctor not Found
+2023-07-04T02:53:28.086Z-error: Record has not found yet
+2023-07-04T02:53:28.088Z-error: Doctor not Found
+2023-07-04T02:54:12.670Z-info: Server is listening on port 8087
+2023-07-04T02:54:25.635Z-error: Record has not found yet
+2023-07-04T02:54:25.636Z-error: Doctor not Found

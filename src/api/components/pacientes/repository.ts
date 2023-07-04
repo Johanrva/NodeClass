@@ -1,7 +1,7 @@
 import { db } from "../../../config/database"
 import { Patient, PatientReq } from "./model"
 import logger from '../../../utils/logger'
-import { CreationError, GetAllError, RecordNotFoundError, UpdateError } from "../../../utils/customErrors"
+import { CreationError, DeleteError, GetAllError, RecordNotFoundError, UpdateError } from "../../../utils/customErrors"
 
 export class PatientRepository {
     public async createPatient(patient: PatientReq): Promise<Patient> {
@@ -41,4 +41,12 @@ export class PatientRepository {
         }
     }
 
+    public async deletePatient (id: number): Promise<void> {
+        try{
+            await db('pacientes').where({ id_paciente:id}).del()
+        } catch (error){
+            logger.error(`Failed deleting patient in repository ${{error}}`)
+            throw new DeleteError('Failed deleting patient', "Patient")
+        }
+    }
 }

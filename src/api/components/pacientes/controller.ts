@@ -9,6 +9,7 @@ export interface PatientController {
     createPatient(req: Request, res: Response): void
     getPatientById (req: Request, res: Response): void
     updatePatient (req: Request, res: Response): Promise<void>
+    deletePatient (req: Request, res: Response) : Promise<void>
 }
 
 export class PatientControllerImpl implements PatientController {
@@ -84,12 +85,25 @@ export class PatientControllerImpl implements PatientController {
             }
         } catch (error) {
             logger.error(error)
-            if (error instanceof RecordNotFoundError){
-                res.status(400).json({error: error.message})
-            } else if (error instanceof UpdateError){
+            if (error instanceof UpdateError){
                 res.status(400).json({error: error.message})
             }else {
                 res.status(400).json({error: "Failed to update patient"})
+            }      
+        }
+    }
+
+    public async deletePatient (req: Request, res: Response): Promise<void> {
+        try {
+            const id = parseInt(req.params.id)
+            await this.patientService.deletePatient(id)
+            res.status(200).json({message: 'Patient was deleted succesfully'})   
+        } catch (error) {
+            logger.error(error)           
+            if (error instanceof DeleteError){
+                res.status(400).json({error: error.message})        
+            } else {
+                res.status(400).json({error: "Failed to delete patient"})
             }      
         }
     }

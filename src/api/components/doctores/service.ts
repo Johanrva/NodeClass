@@ -57,7 +57,7 @@ export class DoctorServiceImpl implements DoctorService {
             if (error instanceof RecordNotFoundError){
                 throw new UpdateError('Doctor not Found', "Doctor")
             } else {
-                throw new UpdateError('Failed to update doctor', "Doctor")
+                throw new UpdateError('Failed updating doctor', "Doctor")
             }
         }
     }
@@ -72,9 +72,9 @@ export class DoctorServiceImpl implements DoctorService {
         } catch (error){
             logger.error(error)
             if (error instanceof RecordNotFoundError){
-                throw new CreationError('Doctor not Found', "Doctor")
+                throw new DeleteError('Doctor not Found', "Doctor")
             } else {
-                throw new CreationError('Failed to delete doctor', "Doctor")
+                throw new DeleteError('Failed deleting doctor', "Doctor")
             }
         }
     }

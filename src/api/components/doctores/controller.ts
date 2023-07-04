@@ -86,9 +86,7 @@ export class DoctorControllerImpl implements DoctorController {
             }
         } catch (error) {
             logger.error(error)
-            if (error instanceof RecordNotFoundError){
-                res.status(400).json({error: error.message})
-            } else if (error instanceof UpdateError){
+            if (error instanceof UpdateError){
                 res.status(400).json({error: error.message})
             }else {
                 res.status(400).json({error: "Failed to update doctor"})

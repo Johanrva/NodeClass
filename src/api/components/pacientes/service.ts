@@ -8,6 +8,7 @@ export interface PatientService {
     createPatient(patientReq: PatientReq) : Promise <Patient> 
     getPatientById (id: number) : Promise <Patient>
     updatePatient (id: number, updates : Partial<PatientReq>): Promise <Patient>
+    deletePatient (id: number): Promise <void>
 }
 
 export class PatientServiceImpl implements PatientService {
@@ -60,5 +61,26 @@ export class PatientServiceImpl implements PatientService {
             }
         }
     }
+
+    public async deletePatient (id: number): Promise <void>{
+        try {
+            const existPatient = await this.patientRepository.getPatientById(id)
+            if(existPatient) {
+                this.patientRepository.deletePatient(id)
+            } else {
+                throw new RecordNotFoundError()
+            }
+        } catch (error){
+            logger.error(error)
+            if (error instanceof RecordNotFoundError){
+                throw new DeleteError('Patient not found', "Patient")
+            } else {
+                throw new DeleteError('Failed deleting patient', "Patient")
+            }
+        }
+        
+    }
+
+    
 
 }
