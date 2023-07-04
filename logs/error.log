@@ -171,3 +171,11 @@
 2023-07-03T01:28:55.113Z-error: Failed updated patient in repository [object Object]
 2023-07-03T01:31:04.442Z-error: Record has not found yet
 2023-07-03T01:31:04.443Z-error: Doctor not Found
+2023-07-04T01:53:50.886Z-error: Record has not found yet
+2023-07-04T01:53:50.887Z-error: Doctor not Found
+2023-07-04T01:54:38.987Z-error: Failed updated doctor in repository [object Object]
+2023-07-04T02:01:37.050Z-error: Failed updated doctor in repository [object Object]
+2023-07-04T02:02:12.771Z-error: Record has not found yet
+2023-07-04T02:02:12.772Z-error: Doctor not Found
+2023-07-04T02:15:31.198Z-error: Failed updated patient in repository [object Object]
+2023-07-04T02:16:15.435Z-error: Failed updated patient in repository [object Object]

@@ -76,7 +76,7 @@ export class PatientControllerImpl implements PatientController {
         try {
             const id = parseInt(req.params.id)
             const patientReq = req.body
-            const patient = await this.patientService.updateDoctor(id, patientReq)
+            const patient = await this.patientService.updatePatient(id, patientReq)
             if (patient) {
                 res.status(200).json(patient)
             } else {

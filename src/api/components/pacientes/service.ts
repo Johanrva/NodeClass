@@ -7,7 +7,7 @@ export interface PatientService {
     getAllPatients() : Promise<Patient[]>
     createPatient(patientReq: PatientReq) : Promise <Patient> 
     getPatientById (id: number) : Promise <Patient>
-    updateDoctor (id: number, updates : Partial<PatientReq>): Promise <Patient>
+    updatePatient (id: number, updates : Partial<PatientReq>): Promise <Patient>
 }
 
 export class PatientServiceImpl implements PatientService {
@@ -40,7 +40,7 @@ export class PatientServiceImpl implements PatientService {
         }
     }
 
-    public async updateDoctor (id: number, updates : Partial<PatientReq>): Promise <Patient>{
+    public async updatePatient (id: number, updates : Partial<PatientReq>): Promise <Patient>{
         try {
             const existPatient = await this.patientRepository.getPatientById(id)
             if(existPatient) {
