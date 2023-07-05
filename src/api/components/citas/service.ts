@@ -34,6 +34,8 @@ export class AppointmentServiceImpl implements AppointmentService {
         try {
             const doctor = await this.doctorRepository.getDoctorById(appointmentReq.id_doctor)
             if (doctor) {
+                appointmentReq.created_at = new Date()
+                appointmentReq.updated_at = new Date()
                 const appointmentDB = await this.appointmentRepository.createAppointment(appointmentReq)
                 const appointment: Appointment = mapAppointment (appointmentDB, doctor)
                 return appointment

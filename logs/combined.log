@@ -417,3 +417,5 @@ info: [object Object],[object Object]
 2023-07-05T04:27:49.847Z-error: Appointment not Found
 2023-07-05T04:27:58.945Z-error: Failed to get appointment from service
 2023-07-05T04:27:58.946Z-error: Record has not found yet
+2023-07-05T04:32:05.201Z-info: Server is listening on port 8087
+2023-07-05T04:34:06.340Z-info: Server is listening on port 8087
