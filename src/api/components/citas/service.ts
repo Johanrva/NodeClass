@@ -8,6 +8,8 @@ export interface AppointmentService {
     getAllAppointments() : Promise<Appointment[]>
     createAppointment(patientReq: AppointmentReq) : Promise <Appointment> 
     getAppointmentById (id: number) : Promise <Appointment>
+    updateAppointment (id: number, updates : Partial<AppointmentReq>): Promise <Appointment>
+    deleteAppointment (id: number): Promise <void>
 }
 
 export class AppointmentServiceImpl implements AppointmentService {
@@ -45,9 +47,7 @@ export class AppointmentServiceImpl implements AppointmentService {
                 throw new CreationError('Doctor not Found', "Appointment")
             } else {
                 throw new CreationError('Failed to create appointment', "Appointment")
-            }
-            
-            
+            }            
         }
     }
 
@@ -63,6 +63,42 @@ export class AppointmentServiceImpl implements AppointmentService {
         }
     }
 
+    public async updateAppointment (id: number, updates : Partial<AppointmentReq>): Promise <Appointment>{
+        try {
+            const existAppointment = await this.appointmentRepository.getAppointmentById(id)
+            if(existAppointment) {
+                updates.updated_at = new Date ()
+                await this.appointmentRepository.updateAppointment(id, updates)           
+                return this.getAppointmentById(id)
+            } else {
+                throw new RecordNotFoundError()
+            }           
+        } catch (error){
+            logger.error(error)
+            if (error instanceof RecordNotFoundError){
+                throw new UpdateError('Appointment not Found', "Appointment")
+            } else {
+                throw new UpdateError('Failed updating Appointment', "Appointment")
+            }
+        }
+    }
+
+    public async deleteAppointment (id: number): Promise <void>{
+        try {
+            const existAppointment = await this.appointmentRepository.getAppointmentById(id)
+            if (!existAppointment){
+                throw new RecordNotFoundError ()
+            }
+            await this.appointmentRepository.deleteAppointment(id)
+        } catch (error){
+            logger.error(error)
+            if (error instanceof RecordNotFoundError){
+                throw new DeleteError('Appointment not Found', "Appointment")
+            } else {
+                throw new DeleteError('Failed deleting appointment', "Apointment")
+            }
+        }
+    }
 }
 
 

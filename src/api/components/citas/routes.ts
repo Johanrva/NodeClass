@@ -13,5 +13,8 @@ const controller: AppointmentController = new AppointmentControllerImpl(service)
 router.get('', controller.getAllAppointments.bind(controller))
 router.post('/create', controller.createAppointment.bind(controller))
 router.get('/:id', controller.getAppointmentById.bind(controller))
+router.put('/:id', controller.updateAppointment.bind(controller))
+router.delete('/:id', controller.deleteAppointment.bind(controller))
+
 
 export default router 

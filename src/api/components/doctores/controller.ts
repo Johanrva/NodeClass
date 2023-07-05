@@ -82,7 +82,7 @@ export class DoctorControllerImpl implements DoctorController {
             if (doctor) {
                 res.status(200).json(doctor)
             } else {
-                throw new UpdateError("Failed to update doctor", "DoctorController")
+                throw new UpdateError("Failed to update doctor", "Doctor")
             }
         } catch (error) {
             logger.error(error)

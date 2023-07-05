@@ -339,3 +339,81 @@ info: [object Object],[object Object]
 2023-07-04T02:54:12.670Z-info: Server is listening on port 8087
 2023-07-04T02:54:25.635Z-error: Record has not found yet
 2023-07-04T02:54:25.636Z-error: Doctor not Found
+2023-07-05T02:51:21.091Z-info: Server is listening on port 8087
+2023-07-05T02:52:55.939Z-error: Failed to get appointment from service
+2023-07-05T02:52:55.940Z-error: Record has not found yet
+2023-07-05T02:53:36.168Z-error: Failed to get appointment from service
+2023-07-05T02:53:36.169Z-error: Record has not found yet
+2023-07-05T02:55:42.716Z-error: Failed get appointment by id in repository [object Object]
+2023-07-05T02:55:42.717Z-error: Failed to get appointment from service
+2023-07-05T02:55:42.718Z-error: Record has not found yet
+2023-07-05T02:55:42.720Z-error: Appointment not Found
+2023-07-05T02:55:53.352Z-error: Failed get appointment by id in repository [object Object]
+2023-07-05T02:55:53.353Z-error: Failed to get appointment from service
+2023-07-05T02:55:53.354Z-error: Record has not found yet
+2023-07-05T02:55:53.355Z-error: Appointment not Found
+2023-07-05T02:56:04.998Z-error: Failed get appointment by id in repository [object Object]
+2023-07-05T02:56:05.000Z-error: Failed to get appointment from service
+2023-07-05T02:56:05.001Z-error: Record has not found yet
+2023-07-05T02:56:05.002Z-error: Appointment not Found
+2023-07-05T02:56:37.302Z-error: Failed get appointment by id in repository [object Object]
+2023-07-05T02:56:37.303Z-error: Failed to get appointment from service
+2023-07-05T02:56:37.304Z-error: Record has not found yet
+2023-07-05T02:56:37.304Z-error: Appointment not Found
+2023-07-05T02:56:47.059Z-error: Failed get appointment by id in repository [object Object]
+2023-07-05T02:56:47.064Z-error: Failed to get appointment from service
+2023-07-05T02:56:47.065Z-error: Record has not found yet
+2023-07-05T02:56:47.066Z-error: Appointment not Found
+2023-07-05T02:57:24.380Z-error: Failed get appointment by id in repository [object Object]
+2023-07-05T02:57:24.381Z-error: Failed to get appointment from service
+2023-07-05T02:57:24.382Z-error: Record has not found yet
+2023-07-05T02:57:24.383Z-error: Appointment not Found
+2023-07-05T02:59:07.617Z-info: Server is listening on port 8087
+2023-07-05T02:59:45.654Z-error: Failed updated appointment in repository [object Object]
+2023-07-05T03:10:03.581Z-info: Server is listening on port 8087
+2023-07-05T03:10:18.233Z-error: Failed get appointment by id in repository [object Object]
+2023-07-05T03:10:18.234Z-error: Failed to get appointment from service
+2023-07-05T03:10:18.235Z-error: Record has not found yet
+2023-07-05T03:10:18.236Z-error: Appointment not Found
+2023-07-05T03:10:25.013Z-error: Failed to get appointment from service
+2023-07-05T03:10:25.014Z-error: Record has not found yet
+2023-07-05T03:10:25.015Z-error: Appointment not Found
+2023-07-05T03:10:58.237Z-error: Failed updated appointment in repository [object Object]
+2023-07-05T03:15:25.025Z-info: Server is listening on port 8087
+2023-07-05T03:15:32.055Z-error: Failed updated appointment in repository error: update "citas" set "identificacion_paciente" = $1, "especialidad" = $2, "doctor" = $3, "consultorio" = $4, "horario" = $5, "id_doctor" = $6, "updated_at" = $7 where "id_cita" = $8 - column "doctor" of relation "citas" does not exist
+2023-07-05T03:18:28.366Z-info: Server is listening on port 8087
+2023-07-05T03:22:06.890Z-error: Failed to create appointment
+2023-07-05T03:22:06.891Z-error: Failed to create appointment
+2023-07-05T03:23:29.002Z-error: Failed to create appointment
+2023-07-05T03:23:29.003Z-error: Failed to create appointment
+2023-07-05T03:24:16.469Z-info: Server is listening on port 8087
+2023-07-05T03:24:25.403Z-error: Failed to create appointment
+2023-07-05T03:27:58.660Z-error: Failed updated appointment in repository error: update "citas" set "identificacion_paciente" = $1, "especialidad" = $2, "doctor" = $3, "consultorio" = $4, "horario" = $5, "id_doctor" = $6, "updated_at" = $7 where "id_cita" = $8 - column "doctor" of relation "citas" does not exist
+2023-07-05T03:32:36.799Z-info: Server is listening on port 8087
+2023-07-05T03:32:44.112Z-error: Failed updated appointment in repository error: update "citas" set "identificacion_paciente" = $1, "especialidad" = $2, "doctor" = $3, "consultorio" = $4, "horario" = $5, "id_doctor" = $6, "updated_at" = $7 where "id_cita" = $8 - column "doctor" of relation "citas" does not exist
+2023-07-05T03:37:07.394Z-info: Server is listening on port 8087
+2023-07-05T03:37:13.807Z-error: Failed updated appointment in repository error: update "citas" set "identificacion_paciente" = $1, "especialidad" = $2, "doctor" = $3, "consultorio" = $4, "horario" = $5, "id_doctor" = $6, "updated_at" = $7 where "id_cita" = $8 - column "doctor" of relation "citas" does not exist
+2023-07-05T03:53:26.704Z-info: Server is listening on port 8087
+2023-07-05T03:59:58.429Z-error: Failed updated appointment in repository error: update "citas" set "id_doctor" = $1, "horario" = $2, "updated_at" = $3 where "id_cita" = $4 - insert or update on table "citas" violates foreign key constraint "fk_doctores"
+2023-07-05T03:59:58.431Z-error: Failed updated appointment
+2023-07-05T03:59:58.432Z-error: Failed updating Appointment
+2023-07-05T04:00:27.676Z-error: Record has not found yet
+2023-07-05T04:00:27.677Z-error: Appointment not Found
+2023-07-05T04:05:59.501Z-error: Failed updated appointment in repository error: update "citas" set "identificacion_paciente" = $1, "id_doctor" = $2, "horario" = $3, "updated_at" = $4 where "id_cita" = $5 - insert or update on table "citas" violates foreign key constraint "fk_pacientes"
+2023-07-05T04:05:59.503Z-error: Failed updated appointment
+2023-07-05T04:05:59.504Z-error: Failed updating Appointment
+2023-07-05T04:06:41.192Z-error: Failed to create appointment
+2023-07-05T04:06:41.193Z-error: Failed to create appointment
+2023-07-05T04:19:49.109Z-info: Server is listening on port 8087
+2023-07-05T04:22:19.265Z-error: Record has not found yet
+2023-07-05T04:22:19.267Z-error: Patient not Found
+2023-07-05T04:24:23.682Z-info: Server is listening on port 8087
+2023-07-05T04:27:09.532Z-info: Server is listening on port 8087
+2023-07-05T04:27:22.556Z-error: Failed to get appointment from service
+2023-07-05T04:27:22.557Z-error: Record has not found yet
+2023-07-05T04:27:38.915Z-error: Failed to get appointment from service
+2023-07-05T04:27:38.916Z-error: Record has not found yet
+2023-07-05T04:27:49.846Z-error: Record has not found yet
+2023-07-05T04:27:49.847Z-error: Appointment not Found
+2023-07-05T04:27:58.945Z-error: Failed to get appointment from service
+2023-07-05T04:27:58.946Z-error: Record has not found yet

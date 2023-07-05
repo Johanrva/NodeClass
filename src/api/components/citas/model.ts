@@ -11,6 +11,8 @@ export interface AppointmentReq {
     especialidad: string
     id_doctor: number
     horario: string
+    created_at?: Date
+    updated_at?: Date
 }
 
 export interface AppointmentResDB {
