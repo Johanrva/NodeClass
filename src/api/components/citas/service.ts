@@ -4,6 +4,7 @@ import { Appointment, AppointmentReq, AppointmentResDB } from "./model"
 import { AppointmentRepository } from "./repository"
 import { DoctorRepository } from "../doctores/repository"
 import { Doctor } from "../doctores/model"
+import { PatientRepository } from "../pacientes/repository"
 export interface AppointmentService {
     getAllAppointments() : Promise<Appointment[]>
     createAppointment(patientReq: AppointmentReq) : Promise <Appointment> 
@@ -15,10 +16,13 @@ export interface AppointmentService {
 export class AppointmentServiceImpl implements AppointmentService {
     private appointmentRepository: AppointmentRepository
     private doctorRepository: DoctorRepository
+    private patientRepository: PatientRepository
 
-    constructor(appointmentRepository: AppointmentRepository, doctorRepository: DoctorRepository){
+
+    constructor(appointmentRepository: AppointmentRepository, doctorRepository: DoctorRepository, patientRepository: PatientRepository){
         this.appointmentRepository = appointmentRepository
         this.doctorRepository = doctorRepository
+        this.patientRepository = patientRepository
     }
     public async getAllAppointments(): Promise<Appointment[]> {
         try {
@@ -33,7 +37,9 @@ export class AppointmentServiceImpl implements AppointmentService {
     public async createAppointment(appointmentReq: AppointmentReq): Promise<Appointment> {
         try {
             const doctor = await this.doctorRepository.getDoctorById(appointmentReq.id_doctor)
-            if (doctor) {
+            const patient = await this.patientRepository.getPatientByIdentification(appointmentReq.identificacion_paciente)
+           
+            if (doctor && patient) {
                 appointmentReq.created_at = new Date()
                 appointmentReq.updated_at = new Date()
                 const appointmentDB = await this.appointmentRepository.createAppointment(appointmentReq)
@@ -46,7 +52,7 @@ export class AppointmentServiceImpl implements AppointmentService {
         } catch (error) {
             logger.error(error)
             if (error instanceof RecordNotFoundError){
-                throw new CreationError('Doctor not Found', "Appointment")
+                throw new CreationError('Doctor or Patient not Found', "Appointment")
             } else {
                 throw new CreationError('Failed to create appointment', "Appointment")
             }            

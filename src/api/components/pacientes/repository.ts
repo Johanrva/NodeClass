@@ -36,7 +36,7 @@ export class PatientRepository {
         try{
             await db('pacientes').where({ id_paciente:id}).update(updates)
         } catch (error){
-            logger.error(`Failed updated patient in repository ${{error}}`)
+            logger.error(`Failed updated patient in repository ${error}`)
             throw new UpdateError('Failed updated patient', "Patient")
         }
     }
@@ -45,8 +45,22 @@ export class PatientRepository {
         try{
             await db('pacientes').where({ id_paciente:id}).del()
         } catch (error){
-            logger.error(`Failed deleting patient in repository ${{error}}`)
+            logger.error(`Failed deleting patient in repository ${error}`)
             throw new DeleteError('Failed deleting patient', "Patient")
+        }
+    }
+
+    public async getPatientByIdentification (identificacion: string): Promise<Boolean> {
+        try{
+            const patient = await db('pacientes').where({identificacion}).first()
+            if (patient){
+                return true
+            } else {
+                return false
+            }
+        } catch (error){
+            logger.error(`Failed get patient by identification in repository ${error}`)
+            throw new RecordNotFoundError()
         }
     }
 }

@@ -3,11 +3,13 @@ import { AppointmentController, AppointmentControllerImpl } from './controller'
 import { AppointmentServiceImpl } from './service'
 import { AppointmentRepository } from './repository'
 import { DoctorRepository } from '../doctores/repository'
-
+import { PatientRepository } from '../pacientes/repository'
 const router = Router ()
 const repository = new AppointmentRepository()
 const repositoryDoctor = new DoctorRepository()
-const service = new AppointmentServiceImpl(repository, repositoryDoctor)
+const repositoryPatient = new PatientRepository()
+
+const service = new AppointmentServiceImpl(repository, repositoryDoctor, repositoryPatient)
 const controller: AppointmentController = new AppointmentControllerImpl(service)
 
 router.get('', controller.getAllAppointments.bind(controller))

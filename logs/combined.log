@@ -433,3 +433,11 @@ info: [object Object],[object Object]
 2023-07-06T01:39:41.294Z-error: Expected double-quoted property name in JSON at position 106
 2023-07-06T01:40:27.599Z-error: Failed to create appointment
 2023-07-06T01:40:27.600Z-error: Failed to create appointment
+2023-07-06T02:02:56.144Z-info: Server is listening on port 8087
+2023-07-06T02:03:06.775Z-error: Record has not found yet
+2023-07-06T02:03:06.776Z-error: Doctor or Patient not Found
+2023-07-06T02:04:05.052Z-error: Record has not found yet
+2023-07-06T02:04:05.053Z-error: Doctor or Patient not Found
+2023-07-06T02:04:57.311Z-info: Server is listening on port 8087
+2023-07-06T02:05:00.762Z-error: Record has not found yet
+2023-07-06T02:05:00.768Z-error: Doctor or Patient not Found
