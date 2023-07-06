@@ -2,6 +2,7 @@ import { Request, Response, json } from "express"
 import { DoctorController, DoctorControllerImpl } from "../api/components/doctores/controller"
 import { DoctorService } from "../api/components/doctores/service"
 import { Doctor, DoctorReq } from "../api/components/doctores/model"
+import { CreationError } from "../utils/customErrors"
 
 const mockReq = {} as Request
 const mockRes = {} as Response
@@ -14,7 +15,9 @@ describe ('DoctorController', () => {
         doctorService = {
             getAllDoctors : jest.fn(),
             createDoctor : jest.fn(),
-            getDoctorById: jest.fn()
+            getDoctorById: jest.fn(),
+            updateDoctor: jest.fn(),
+            deleteDoctor: jest.fn()        
         }
         doctorController = new DoctorControllerImpl(doctorService)
         mockRes.status = jest.fn().mockReturnThis()
@@ -67,14 +70,46 @@ describe ('DoctorController', () => {
             expect(mockRes.status).toHaveBeenCalledWith(201)
         })
 
-        it('should be handler a error and return 400 status', async () => {
-            const error = new Error ('Internal Server Error');
+        it('should be handler a error and return 400 status when request is incorrect', async () => {
             (mockReq.body) = {} ;
-            (doctorService.createDoctor as jest.Mock).mockRejectedValue(error)
 
             await doctorController.createDoctor(mockReq, mockRes)
 
-            expect(doctorService.createDoctor).toHaveBeenCalledWith({})
+            expect(mockRes.json).toHaveBeenCalledWith({message:"\"nombre\" is required"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
+
+        })
+
+        it('should be handler a error and return 400 status when doctor does not create', async () => {
+            //Mock Process
+            const error = new CreationError ('Internal Server Error', 'Doctor');
+            const doctorReq: DoctorReq = {nombre: 'Carlos', apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};
+            
+            (mockReq.body as DoctorReq) = doctorReq;
+            (doctorService.createDoctor as jest.Mock).mockRejectedValue(error)
+            // Method excecution
+            await doctorController.createDoctor(mockReq, mockRes)
+            //Asserts
+            expect(doctorService.createDoctor).toHaveBeenCalledWith(doctorReq)
+
+            expect(mockRes.json).toHaveBeenCalledWith({
+                error_name: "Doctor CreationError",
+                message: "Internal Server Error"
+            })
+            expect(mockRes.status).toHaveBeenCalledWith(400)
+
+        })
+        it('should be handler a error and return 400 status failed doctor create', async () => {
+            //Mock Process
+            const error = new Error ('Internal Server Error');
+            const doctorReq: DoctorReq = {nombre: 'Carlos', apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};
+            
+            (mockReq.body as DoctorReq) = doctorReq;
+            (doctorService.createDoctor as jest.Mock).mockRejectedValue(error)
+            // Method excecution
+            await doctorController.createDoctor(mockReq, mockRes)
+            //Asserts
+            expect(doctorService.createDoctor).toHaveBeenCalledWith(doctorReq)
             expect(mockRes.json).toHaveBeenCalledWith({message:"Internal Server Error"})
             expect(mockRes.status).toHaveBeenCalledWith(400)
 
