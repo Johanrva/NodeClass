@@ -1,4 +1,3 @@
-import { Doctor } from "./model"
 import {Request, Response} from 'express'
 import { DoctorService } from "./service"
 import logger from '../../../utils/logger'
@@ -43,7 +42,7 @@ export class DoctorControllerImpl implements DoctorController {
                     if (error instanceof CreationError){
                         res.status(400).json({
                             error_name: error.name,
-                            message: "Failed Creating a doctor"
+                            message: error.message
                         })    
                     } else {
                         res.status(400).json({

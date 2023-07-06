@@ -2,6 +2,7 @@ import {Request, Response} from 'express'
 import { AppointmentService } from "./service"
 import logger from '../../../utils/logger'
 import { CreationError, UpdateError, RecordNotFoundError, DeleteError } from "../../../utils/customErrors"
+import { createAppointmentSchema } from './validations/appointment.validations'
 
 export interface AppointmentController {
     getAllAppointments(req: Request, res: Response): void
@@ -27,27 +28,32 @@ export class AppointmentControllerImpl implements AppointmentController {
         }
     }
     public createAppointment(req: Request, res: Response): void {
-        const appointmentReq = req.body
-        this.appointmentService.createAppointment(appointmentReq)
-        .then(
-            (appointment) =>{
-                 res.status(201).json(appointment)
-            },
-            (error) => {
-                logger.error(error)
-                if (error instanceof CreationError){
-                    res.status(400).json({
-                        error_name: error.name,
-                        message: error.message
-                    })    
-                } else {
-                    res.status(400).json({
-                        message: "Internal Server Error"
-                    })
+        const {error, value} = createAppointmentSchema.validate(req.body)
+
+        if (error) {
+            res.status(400).json({message: error.details[0].message})
+
+        } else {
+            this.appointmentService.createAppointment(value)
+            .then(
+                (appointment) =>{
+                    res.status(201).json(appointment)
+                },
+                (error) => {
+                    logger.error(error)
+                    if (error instanceof CreationError){
+                        res.status(400).json({
+                            error_name: error.name,
+                            message: error.message
+                        })    
+                    } else {
+                        res.status(400).json({
+                            message: "Internal Server Error"
+                        })
+                    }
                 }
-            }
-        )
- 
+            )
+        }
     }
 
     public async getAppointmentById (req: Request, res: Response): Promise<void> {

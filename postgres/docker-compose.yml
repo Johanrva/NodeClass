@@ -1,5 +1,5 @@
 #Docker de Posgres y Pgadmin
-#Para instanciar los contenedores desde un coumetno .yml se debe escribir el siguiente comando:
+#Para instanciar los contenedores desde un documento .yml se debe escribir el siguiente comando:
 # docker compose up -d
 
 version: '3.5'

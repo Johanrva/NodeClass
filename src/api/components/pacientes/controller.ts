@@ -3,6 +3,7 @@ import {Request, Response} from 'express'
 import { PatientService } from "./service"
 import logger from '../../../utils/logger'
 import { CreationError, DeleteError, UpdateError, RecordNotFoundError } from "../../../utils/customErrors"
+import { createPatientSchema } from "./validations/patient.validations"
 
 export interface PatientController {
     getAllPatients(req: Request, res: Response): void
@@ -27,28 +28,30 @@ export class PatientControllerImpl implements PatientController {
         }
     }
     public createPatient(req: Request, res: Response): void {
-        const patientReq = req.body
-    
-        this.patientService.createPatient(patientReq)
-        .then(
-            (patient) =>{
-                 res.status(201).json(patient)
-            },
-            (error) => {
-                logger.error(error)
-                if (error instanceof CreationError){
-                    res.status(400).json({
-                        error_name: error.name,
-                        message: error.message
-                    })    
-                } else {
-                    res.status(400).json({
-                        message: "Internal Server Error"
-                    })
+        const {error, value} = createPatientSchema.validate(req.body)
+        if (error) {
+            res.status(400).json({message: error.details[0].message})
+        } else {        
+            this.patientService.createPatient(value)
+            .then(
+                (patient) =>{
+                    res.status(201).json(patient)
+                },
+                (error) => {
+                    logger.error(error)
+                    if (error instanceof CreationError){
+                        res.status(400).json({
+                            error_name: error.name,
+                            message: error.message
+                        })    
+                    } else {
+                        res.status(400).json({
+                            message: "Internal Server Error"
+                        })
+                    }
                 }
-            }
-        )
- 
+            )
+        }
     }
 
     public async getPatientById (req: Request, res: Response): Promise<void> {

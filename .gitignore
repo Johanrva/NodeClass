@@ -2,5 +2,5 @@
 node_modules/
 
 # Env variables
-.env
+#.env
 

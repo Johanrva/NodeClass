@@ -419,3 +419,17 @@ info: [object Object],[object Object]
 2023-07-05T04:27:58.946Z-error: Record has not found yet
 2023-07-05T04:32:05.201Z-info: Server is listening on port 8087
 2023-07-05T04:34:06.340Z-info: Server is listening on port 8087
+2023-07-06T01:13:28.231Z-info: Server is listening on port 8087
+2023-07-06T01:15:23.094Z-info: Server is listening on port 8087
+2023-07-06T01:16:10.524Z-error: Failed to create doctor
+2023-07-06T01:16:27.913Z-info: Server is listening on port 8087
+2023-07-06T01:16:31.471Z-error: Failed to create doctor
+2023-07-06T01:18:31.630Z-error: Unexpected token 'K', ...""nombre": Karen,
+  "... is not valid JSON
+2023-07-06T01:25:15.719Z-info: Server is listening on port 8087
+2023-07-06T01:37:41.263Z-info: Server is listening on port 8087
+2023-07-06T01:38:59.420Z-error: Record has not found yet
+2023-07-06T01:38:59.421Z-error: Doctor not Found
+2023-07-06T01:39:41.294Z-error: Expected double-quoted property name in JSON at position 106
+2023-07-06T01:40:27.599Z-error: Failed to create appointment
+2023-07-06T01:40:27.600Z-error: Failed to create appointment
