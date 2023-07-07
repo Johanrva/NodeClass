@@ -2,7 +2,7 @@ import { Request, Response, json } from "express"
 import { DoctorController, DoctorControllerImpl } from "../api/components/doctores/controller"
 import { DoctorService } from "../api/components/doctores/service"
 import { Doctor, DoctorReq } from "../api/components/doctores/model"
-import { CreationError } from "../utils/customErrors"
+import { CreationError, DeleteError, UpdateError } from "../utils/customErrors"
 
 const mockReq = {} as Request
 const mockRes = {} as Response
@@ -153,6 +153,89 @@ describe ('DoctorController', () => {
             expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to retrieve doctor"})
             expect(mockRes.status).toHaveBeenCalledWith(400)
 
+        })
+    })
+
+    describe ('updateDoctor', () => {
+        it('should update doctor', async () => {
+            //Mock Process
+
+            const doctorReq: DoctorReq = { nombre: 'Carlos', apellido: 'Caceres',especialidad: 'Medicina General', consultorio:100};            
+            const doctorRes: Doctor = {id_doctor : 1, nombre: "Carlos", apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};            
+            (mockReq.params) = {id: "1"};
+            (doctorService.updateDoctor as jest.Mock).mockResolvedValue(doctorRes)
+            // Method excecution
+            await doctorController.updateDoctor(mockReq, mockRes)
+            //Asserts
+            expect(doctorService.updateDoctor).toHaveBeenCalledWith(1,doctorReq)
+            expect(mockRes.json).toHaveBeenCalledWith(doctorRes)
+            expect(mockRes.status).toHaveBeenCalledWith(200)
+        })
+
+        it('should return 400 status if doctor not found', async () => {
+            const error = new UpdateError ('Doctor not Found', "Doctor");
+            const doctorReq: DoctorReq = { nombre: 'Carlos', apellido: 'Caceres',especialidad: 'Medicina General', consultorio:100};            
+            (mockReq.params) = {id:"1"} ;
+            (doctorService.updateDoctor as jest.Mock).mockRejectedValue(error)
+
+            await doctorController.updateDoctor(mockReq, mockRes)
+
+            expect(doctorService.updateDoctor).toHaveBeenCalledWith(1,doctorReq)
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Doctor not Found"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
+
+        })
+
+        
+        it('should return 400 status if an error occurs', async () => {
+            const error = new Error ('Internal Server Error');
+            const doctorReq: DoctorReq = { nombre: 'Carlos', apellido: 'Caceres',especialidad: 'Medicina General', consultorio:100};            
+            (mockReq.params) = {id:"1"} ;
+            (doctorService.updateDoctor as jest.Mock).mockRejectedValue(error)
+
+            await doctorController.updateDoctor(mockReq, mockRes)
+
+            expect(doctorService.updateDoctor).toHaveBeenCalledWith(1,doctorReq)
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to update doctor"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
+        })
+    })
+
+    describe ('deleteDoctor', () => {
+        it('should delete doctor', async () => {
+            (mockReq.params) = {id: "1"};
+            
+            await doctorController.deleteDoctor(mockReq, mockRes)
+            
+            expect(doctorService.deleteDoctor).toHaveBeenCalledWith(1)
+            expect(mockRes.json).toHaveBeenCalledWith({message: 'Doctor was deleted succesfully'})
+            expect(mockRes.status).toHaveBeenCalledWith(200)
+        })
+
+        it('should return 400 status if doctor not found', async () => {
+            const error = new DeleteError ('Doctor not Found', "Doctor");
+            (mockReq.params) = {id:"1"} ;
+            (doctorService.deleteDoctor as jest.Mock).mockRejectedValue(error)
+
+            await doctorController.deleteDoctor(mockReq, mockRes)
+
+            expect(doctorService.deleteDoctor).toHaveBeenCalledWith(1)
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Doctor not Found"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
+
+        })
+
+        
+        it('should return 400 status if an error occurs', async () => {
+            const error = new Error ('Internal Server Error');
+            (mockReq.params) = {id:"1"} ;
+            (doctorService.deleteDoctor as jest.Mock).mockRejectedValue(error)
+
+            await doctorController.deleteDoctor(mockReq, mockRes)
+
+            expect(doctorService.deleteDoctor).toHaveBeenCalledWith(1)
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to delete doctor"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
         })
     })
 

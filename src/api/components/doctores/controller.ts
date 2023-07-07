@@ -78,11 +78,8 @@ export class DoctorControllerImpl implements DoctorController {
             const id = parseInt(req.params.id)
             const doctorReq = req.body
             const doctor = await this.doctorService.updateDoctor(id, doctorReq)
-            if (doctor) {
-                res.status(200).json(doctor)
-            } else {
-                throw new UpdateError("Failed to update doctor", "Doctor")
-            }
+            res.status(200).json(doctor)
+            
         } catch (error) {
             logger.error(error)
             if (error instanceof UpdateError){

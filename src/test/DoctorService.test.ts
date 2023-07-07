@@ -2,6 +2,7 @@ import { Doctor, DoctorReq } from "../api/components/doctores/model";
 import { DoctorServiceImpl } from "../api/components/doctores/service";
 import { DoctorRepository } from "../api/components/doctores/repository";
 import { error } from "winston";
+import { CreationError, DeleteError, RecordNotFoundError, UpdateError } from "../utils/customErrors";
 
 describe ('DoctorService', () => {
     let doctorService : DoctorServiceImpl
@@ -64,10 +65,9 @@ describe ('DoctorService', () => {
         it('should throw and error if doctor creation fails', async () => {
             //Mock Process 
             const doctorReq: DoctorReq = {nombre: 'Carlos', apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};
-            const error1 = new Error ('Failed to created a doctor');
+            const error1 = new CreationError ('Failed to created a doctor', 'Doctor');
             (doctorRepository.createDoctor as jest.Mock).mockRejectedValue(error1)
             // Method excecution
-            //const result = await doctorService.createDoctor(doctorReq)
             //Asserts
             //expect(result).rejects.toThrowError(error)
             await expect(doctorService.createDoctor(doctorReq)).rejects.toThrowError(error1)
@@ -105,12 +105,91 @@ describe ('DoctorService', () => {
         it('should throw an error if retriebal fails', async () => {
             //Mock Process    
             const doctorId = 1;
-            const error = new Error('Database error');
+            const error = new RecordNotFoundError();
             (doctorRepository.getDoctorById as jest.Mock).mockRejectedValue(error)
            
             //Asserts
             await expect(doctorService.getDoctorById(doctorId)).rejects.toThrowError(error)
             expect(doctorRepository.getDoctorById).toHaveBeenCalledWith(doctorId)           
+        })
+    })
+
+    describe ('updateDoctor', () => {
+        it('should update a doctor and return it from service', async () => {
+            //Mock Process
+            const doctorRes: Doctor = {id_doctor : 1, nombre: 'Carlos', apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100, update_at: new Date()};
+            const doctorReq: DoctorReq = {nombre: 'Carlos', apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};
+            
+            const id = 1;
+            (doctorRepository.getDoctorById as jest.Mock).mockResolvedValue(doctorRes)
+            // Method excecution
+            const result = await doctorService.updateDoctor(id,doctorReq)
+            //Asserts
+            expect(doctorRepository.getDoctorById).toHaveBeenCalledWith(id)
+            expect(doctorRepository.updateDoctor).toHaveBeenCalledWith(1,doctorRes)
+            expect(result).toEqual(doctorRes)
+            
+        })
+        
+        it('should throw an error if doctor updating fails', async () => {
+            //Mock Process 
+            const doctorReq: DoctorReq = {nombre: 'Carlos', apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};
+            const error1 = new UpdateError ('Failed updating doctor', 'Doctor');
+            const id = 1;
+            (doctorRepository.getDoctorById as jest.Mock).mockRejectedValue(new Error())
+            
+            await expect(doctorService.updateDoctor(id,doctorReq)).rejects.toThrowError(error1)
+            expect(doctorRepository.getDoctorById).toHaveBeenCalledWith(1)
+            
+        })
+
+        it('should throw an error if doctor not found', async () => {
+            const doctorReq: DoctorReq = {nombre: 'Carlos', apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};
+            const error1 = new UpdateError ('Doctor not Found', 'Doctor');
+            const id = 1;
+            
+            //(doctorRepository.getDoctorById as jest.Mock).mockRejectedValue(new RecordNotFoundError())
+            (doctorRepository.getDoctorById as jest.Mock).mockResolvedValue(null)
+            
+
+            await expect(doctorService.updateDoctor(1,doctorReq)).rejects.toThrowError(error1)
+            expect(doctorRepository.getDoctorById).toHaveBeenCalledWith(id)
+            
+        })
+    })
+
+    describe ('deleteDoctor', () => {
+        it('should delete a doctor and return it from service', async () => {
+            const doctorRes: Doctor = {id_doctor : 1, nombre: 'Carlos', apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};          
+            const id = 1;
+            (doctorRepository.getDoctorById as jest.Mock).mockResolvedValue(doctorRes)
+
+            await doctorService.deleteDoctor(id)
+
+            expect(doctorRepository.getDoctorById).toHaveBeenCalledWith(id)
+            expect(doctorRepository.deleteDoctor).toHaveBeenCalledWith(id)            
+        })
+        
+        it('should throw an error if doctor updating fails', async () => {
+            //Mock Process 
+            const error1 = new DeleteError ('Failed deleting doctor', 'Doctor');
+            const id = 1;
+            (doctorRepository.getDoctorById as jest.Mock).mockRejectedValue(new Error())
+            
+            await expect(doctorService.deleteDoctor(id)).rejects.toThrowError(error1)
+            expect(doctorRepository.getDoctorById).toHaveBeenCalledWith(id)
+            
+        })
+
+        it('should throw an error if doctor not found', async () => {
+            const error1 = new DeleteError ('Doctor not Found', 'Doctor');
+            const id = 1;
+            //(doctorRepository.getDoctorById as jest.Mock).mockRejectedValue(new RecordNotFoundError())
+            (doctorRepository.getDoctorById as jest.Mock).mockResolvedValue(null)
+            
+            await expect(doctorService.deleteDoctor(1)).rejects.toThrowError(error1)
+            expect(doctorRepository.getDoctorById).toHaveBeenCalledWith(id)
+            
         })
     })
 })

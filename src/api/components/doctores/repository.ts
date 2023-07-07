@@ -37,7 +37,7 @@ export class DoctorRepository {
             await db('doctores').where({ id_doctor:id}).update(updates)
         } catch (error){
             logger.error(`Failed updated doctor in repository ${{error}}`)
-            throw new UpdateError('Failed updated doctor', "Doctor")
+            throw new UpdateError('Failed update doctor', "Doctor")
         }
     }
 

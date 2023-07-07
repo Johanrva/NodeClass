@@ -6,7 +6,7 @@ export interface Doctor {
     consultorio: number
     correo?: string
     createdAt?: Date
-    updateAt?: Date
+    update_at?: Date
 }
 
 export interface DoctorReq {
