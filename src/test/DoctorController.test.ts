@@ -1,4 +1,4 @@
-import { Request, Response, json } from "express"
+import { Request, Response } from "express"
 import { DoctorController, DoctorControllerImpl } from "../api/components/doctores/controller"
 import { DoctorService } from "../api/components/doctores/service"
 import { Doctor, DoctorReq } from "../api/components/doctores/model"

@@ -3,9 +3,9 @@ export interface Patient {
     nombre: string
     apellido: string
     identificacion: string
-    telefono: number
-    created_at: Date
-    update_at: Date
+    telefono?: number
+    created_at?: Date
+    update_at?: Date
 }
 
 export interface PatientReq {
