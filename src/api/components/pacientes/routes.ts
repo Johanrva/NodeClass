@@ -1,4 +1,4 @@
-import {Router} from 'express'
+import { Router } from 'express'
 import { PatientController, PatientControllerImpl } from './controller'
 import { PatientServiceImpl } from './service'
 import { PatientRepository } from './repository'

@@ -1,5 +1,5 @@
 import { db } from "../../../config/database"
-import { Appointment, AppointmentReq, AppointmentResDB } from "./model"
+import { AppointmentReq, AppointmentResDB } from "./model"
 import logger from '../../../utils/logger'
 import { CreationError, DeleteError, GetAllError, RecordNotFoundError, UpdateError } from "../../../utils/customErrors"
 

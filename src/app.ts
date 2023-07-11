@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express"
+import express from "express"
 import logger  from "./utils/logger"
 import routes from './api/routes'
 import { errorHandlerMiddleware } from "./middleware/errorHandler"
@@ -8,7 +8,7 @@ const port = 8087
 
 
 // Crea un middleware para convertir
-// todos los bodies de los reques en Json
+// todos los bodies de los request en Json
 app.use(express.json())
 app.use(errorHandlerMiddleware)
 app.use('/api/v1', routes)

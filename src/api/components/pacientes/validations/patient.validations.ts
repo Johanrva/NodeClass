@@ -1,5 +1,4 @@
 import joi from "joi"
-//import { Especialidad } from "../../../../utils/model"
 
 const createPatientSchema= joi.object({
     nombre: joi.string().required(),

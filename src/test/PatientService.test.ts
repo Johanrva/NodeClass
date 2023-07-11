@@ -2,7 +2,6 @@ import { Patient, PatientReq } from "../api/components/pacientes/model"
 import { PatientServiceImpl } from "../api/components/pacientes/service"
 import { PatientRepository } from "../api/components/pacientes/repository";
 import { CreationError, DeleteError, RecordNotFoundError, UpdateError } from "../utils/customErrors";
-import { DoctorRepository } from "../api/components/doctores/repository";
 
 describe ('PatientService', () => {
     let patientService : PatientServiceImpl
@@ -49,7 +48,7 @@ describe ('PatientService', () => {
     })
 
     describe ('cratePatient', () => {
-        it('should create a new patient and return it from service', async () => {
+        it('should create an new patient and return it from service', async () => {
             //Mock Process
             const patientRes: Patient = {id_paciente : 1, nombre: 'Carlos', apellido: 'Caceres', identificacion: "123456789"};
             const patientReq: PatientReq = {nombre: 'Carlos', apellido: 'Caceres', identificacion: "123456789"};
@@ -63,7 +62,7 @@ describe ('PatientService', () => {
             
         })
         
-        it('should throw and error if patient creation fails', async () => {
+        it('should throw an error if patient creation fails', async () => {
             //Mock Process 
             const patientReq: PatientReq = {nombre: 'Carlos', apellido: 'Caceres', identificacion: "123456789"};
             const error = new CreationError ('Failed to created a patient', 'Patient');

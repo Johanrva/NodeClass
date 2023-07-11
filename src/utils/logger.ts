@@ -21,16 +21,4 @@ const logger = createLogger(
     }   
 )
 
-// const logger = winston.createLogger(
-//     {
-//         level: 'info', // Set Log Level
-//         format: winston.format.printf(),
-//         transports:[
-//             new winston.transports.Console(),
-//             new winston.transports.File({filename: 'logs/combined.log'}), // All logs to a file
-//             new winston.transports.File({filename: 'logs/error.log', level :'error'})            
-//         ]
-//     }
-// )
-
 export default logger
