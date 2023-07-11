@@ -93,7 +93,7 @@ export class AppointmentControllerImpl implements AppointmentController {
             if (error instanceof UpdateError){
                 res.status(400).json({error: error.message})
             }else {
-                res.status(400).json({error: "Failed to update doctor"})
+                res.status(400).json({error: "Failed to update appointment"})
             }      
         }
     }
@@ -108,7 +108,7 @@ export class AppointmentControllerImpl implements AppointmentController {
             if (error instanceof DeleteError){
                 res.status(400).json({error: error.message})
             } else {
-                res.status(400).json({error: "Failed to delete doctor"})
+                res.status(400).json({error: "Failed to delete appointment"})
             }      
         }
     }

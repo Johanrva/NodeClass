@@ -41,203 +41,215 @@ describe ('AppointmentController', () => {
             expect(mockRes.status).toHaveBeenCalledWith(200)
         })
 
-        // it('should be handler a error and return 400 status', async () => {
-        //     const error = new Error ('Internal Server Error');
-        //     (doctorService.getAllDoctors as jest.Mock).mockRejectedValue(error)
+        it('should be handler a error and return 400 status', async () => {
+            const error = new Error ('Internal Server Error');
+            (appointmentService.getAllAppointments as jest.Mock).mockRejectedValue(error)
 
-        //     await doctorController.getAllDoctors(mockReq, mockRes)
+            await appointmentController.getAllAppointments(mockReq, mockRes)
 
-        //     expect(doctorService.getAllDoctors).toHaveBeenCalled()
-        //     expect(mockRes.json).toHaveBeenCalledWith({message:"Error getting all doctors"})
-        //     expect(mockRes.status).toHaveBeenCalledWith(400)
+            expect(appointmentService.getAllAppointments).toHaveBeenCalled()
+            expect(mockRes.json).toHaveBeenCalledWith({message:"Error getting all appointments"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
 
-        // })
+        })
     })
 
-    // describe ('createDoctor', () => {
-    //     it('should create a new doctor and return info', async () => {
-    //         //Mock Process
-    //         const doctorRes: Doctor = {id_doctor : 1, nombre: 'Carlos', apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};
-    //         const doctorReq: DoctorReq = {nombre: 'Carlos', apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};
+    describe ('createAppointment', () => {
+        it('should create a new appointment and return info', async () => {
+            //Mock Process
+            const appointmentRes : Appointment = {identificacion_paciente : "123456789", especialidad: 'Medicina General', consultorio:100, doctor: "Armando Puentes", horario: "9:30"}
+            const appointmentReq : AppointmentReq = {identificacion_paciente : "123456789", especialidad: 'Medicina General', id_doctor: 1, horario: "9:30"};
             
-    //         (mockReq.body as DoctorReq) = doctorReq;
-    //         (doctorService.createDoctor as jest.Mock).mockResolvedValue(doctorRes)
-    //         // Method excecution
-    //         await doctorController.createDoctor(mockReq, mockRes)
-    //         //Asserts
-    //         expect(doctorService.createDoctor).toHaveBeenCalledWith(doctorReq)
-    //         expect(mockRes.json).toHaveBeenCalledWith(doctorRes)
-    //         expect(mockRes.status).toHaveBeenCalledWith(201)
-    //     })
+            (mockReq.body as AppointmentReq) = appointmentReq;
+            (appointmentService.createAppointment as jest.Mock).mockResolvedValue(appointmentRes)
+            // Method excecution
+            await appointmentController.createAppointment(mockReq, mockRes)
+            //Asserts
+            expect(appointmentService.createAppointment).toHaveBeenCalledWith(appointmentReq)
+            expect(mockRes.json).toHaveBeenCalledWith(appointmentRes)
+            expect(mockRes.status).toHaveBeenCalledWith(201)
+        })
 
-    //     it('should be handler a error and return 400 status when request is incorrect', async () => {
-    //         (mockReq.body) = {} ;
+        it('should be handler a error and return 400 status when request is incorrect', async () => {
+            (mockReq.body) = {identificacion_paciente: "123456789"} ;
 
-    //         await doctorController.createDoctor(mockReq, mockRes)
+            await appointmentController.createAppointment(mockReq, mockRes)
 
-    //         expect(mockRes.json).toHaveBeenCalledWith({message:"\"nombre\" is required"})
-    //         expect(mockRes.status).toHaveBeenCalledWith(400)
+            expect(mockRes.json).toHaveBeenCalledWith({message:"\"especialidad\" is required"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
 
-    //     })
+        })
 
-    //     it('should be handler a error and return 400 status when doctor does not create', async () => {
-    //         //Mock Process
-    //         const error = new CreationError ('Internal Server Error', 'Doctor');
-    //         const doctorReq: DoctorReq = {nombre: 'Carlos', apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};
+        it('should be handler a error and return 400 status when appointment does not create', async () => {
+            //Mock Process
+            const error = new CreationError ('Doctor or Patient not Found', "Appointment");
+            const appointmentReq : AppointmentReq = {identificacion_paciente : "123456789", especialidad: 'Medicina General', id_doctor: 1, horario: "9:30"};
             
-    //         (mockReq.body as DoctorReq) = doctorReq;
-    //         (doctorService.createDoctor as jest.Mock).mockRejectedValue(error)
-    //         // Method excecution
-    //         await doctorController.createDoctor(mockReq, mockRes)
-    //         //Asserts
-    //         expect(doctorService.createDoctor).toHaveBeenCalledWith(doctorReq)
+            (mockReq.body as AppointmentReq) = appointmentReq;
+            (appointmentService.createAppointment as jest.Mock).mockRejectedValue(error)
+            // Method excecution
+            await appointmentController.createAppointment(mockReq, mockRes)
+            //Asserts
+            expect(appointmentService.createAppointment).toHaveBeenCalledWith(appointmentReq)
 
-    //         expect(mockRes.json).toHaveBeenCalledWith({
-    //             error_name: "Doctor CreationError",
-    //             message: "Internal Server Error"
-    //         })
-    //         expect(mockRes.status).toHaveBeenCalledWith(400)
+            expect(mockRes.json).toHaveBeenCalledWith({
+                error_name: "Appointment CreationError",
+                message: "Doctor or Patient not Found"
+            })
+            expect(mockRes.status).toHaveBeenCalledWith(400)
 
-    //     })
-    //     it('should be handler a error and return 400 status failed doctor create', async () => {
-    //         //Mock Process
-    //         const error = new Error ('Internal Server Error');
-    //         const doctorReq: DoctorReq = {nombre: 'Carlos', apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};
+        })
+        it('should be handler an error and return 400 status failed appointment create', async () => {
+            //Mock Process
+            const error = new Error ('Internal Server Error');
+            const appointmentReq : AppointmentReq = {identificacion_paciente : "123456789", especialidad: 'Medicina General', id_doctor: 1, horario: "9:30"};
             
-    //         (mockReq.body as DoctorReq) = doctorReq;
-    //         (doctorService.createDoctor as jest.Mock).mockRejectedValue(error)
-    //         // Method excecution
-    //         await doctorController.createDoctor(mockReq, mockRes)
-    //         //Asserts
-    //         expect(doctorService.createDoctor).toHaveBeenCalledWith(doctorReq)
-    //         expect(mockRes.json).toHaveBeenCalledWith({message:"Internal Server Error"})
-    //         expect(mockRes.status).toHaveBeenCalledWith(400)
+            (mockReq.body as AppointmentReq) = appointmentReq;
+            (appointmentService.createAppointment as jest.Mock).mockRejectedValue(error)
+            // Method excecution
+            await appointmentController.createAppointment(mockReq, mockRes)
+            //Asserts
+            expect(appointmentService.createAppointment).toHaveBeenCalledWith(appointmentReq)
+            expect(mockRes.json).toHaveBeenCalledWith({message:"Internal Server Error"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
 
-    //     })
-    // })
+        })
+    })
 
-    // describe ('getDoctorById', () => {
-    //     it('should get doctor by id', async () => {
-    //         //Mock Process
-    //         const doctorRes: Doctor = {id_doctor : 1, nombre: 'Carlos', apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};            
-    //         (mockReq.params) = {id: "1"};
-    //         (doctorService.getDoctorById as jest.Mock).mockResolvedValue(doctorRes)
-    //         // Method excecution
-    //         await doctorController.getDoctorById(mockReq, mockRes)
-    //         //Asserts
-    //         expect(doctorService.getDoctorById).toHaveBeenCalledWith(1)
-    //         expect(mockRes.json).toHaveBeenCalledWith(doctorRes)
-    //         expect(mockRes.status).toHaveBeenCalledWith(200)
-    //     })
+    describe ('getAppointmentById', () => {
+        it('should get appointment by id', async () => {
+            //Mock Process
+            const appointmentRes : Appointment = {identificacion_paciente : "123456789", especialidad: 'Medicina General', consultorio:100, doctor: "Armando Puentes", horario: "9:30"};
 
-    //     it('should return 400 status if doctor not found', async () => {
-    //         (mockReq.params) = {id:"1"} ;
-    //         (doctorService.getDoctorById as jest.Mock).mockResolvedValue(null)
+            (mockReq.params) = {id: "1"};
+            (appointmentService.getAppointmentById as jest.Mock).mockResolvedValue(appointmentRes)
+            // Method excecution
+            await appointmentController.getAppointmentById(mockReq, mockRes)
+            //Asserts
+            expect(appointmentService.getAppointmentById).toHaveBeenCalledWith(1)
+            expect(mockRes.json).toHaveBeenCalledWith(appointmentRes)
+            expect(mockRes.status).toHaveBeenCalledWith(200)
+        })
 
-    //         await doctorController.getDoctorById(mockReq, mockRes)
+        it('should return 400 status if appointment not found', async () => {
+            (mockReq.params) = {id:"1"} ;
+            (appointmentService.getAppointmentById as jest.Mock).mockResolvedValue(null)
 
-    //         expect(doctorService.getDoctorById).toHaveBeenCalledWith(1)
-    //         expect(mockRes.json).toHaveBeenCalledWith({error:"Record has not found yet"})
-    //         expect(mockRes.status).toHaveBeenCalledWith(400)
+            await appointmentController.getAppointmentById(mockReq, mockRes)
 
-    //     })
+            expect(appointmentService.getAppointmentById).toHaveBeenCalledWith(1)
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Record has not found yet"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
 
-    //     it('should return 400 status if an error occurs', async () => {
-    //         const error = new Error ('Internal Server Error');
-    //         (mockReq.params) = {id:"1"} ;
-    //         (doctorService.getDoctorById as jest.Mock).mockRejectedValue(error)
+        })
 
-    //         await doctorController.getDoctorById(mockReq, mockRes)
+        it('should return 400 status if an error occurs', async () => {
+            const error = new Error ('Internal Server Error');
+            (mockReq.params) = {id:"1"} ;
+            (appointmentService.getAppointmentById as jest.Mock).mockRejectedValue(error)
 
-    //         expect(doctorService.getDoctorById).toHaveBeenCalledWith(1)
-    //         expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to retrieve doctor"})
-    //         expect(mockRes.status).toHaveBeenCalledWith(400)
+            await appointmentController.getAppointmentById(mockReq, mockRes)
 
-    //     })
-    // })
+            expect(appointmentService.getAppointmentById).toHaveBeenCalledWith(1)
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to retrieve patient"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
 
-    // describe ('updateDoctor', () => {
-    //     it('should update doctor', async () => {
-    //         //Mock Process
+        })
 
-    //         const doctorReq: DoctorReq = { nombre: 'Carlos', apellido: 'Caceres',especialidad: 'Medicina General', consultorio:100};            
-    //         const doctorRes: Doctor = {id_doctor : 1, nombre: "Carlos", apellido: 'Caceres', especialidad: 'Medicina General', consultorio:100};            
-    //         (mockReq.params) = {id: "1"};
-    //         (doctorService.updateDoctor as jest.Mock).mockResolvedValue(doctorRes)
-    //         // Method excecution
-    //         await doctorController.updateDoctor(mockReq, mockRes)
-    //         //Asserts
-    //         expect(doctorService.updateDoctor).toHaveBeenCalledWith(1,doctorReq)
-    //         expect(mockRes.json).toHaveBeenCalledWith(doctorRes)
-    //         expect(mockRes.status).toHaveBeenCalledWith(200)
-    //     })
+        it('should return 400 status if params is not a number', async () => {
+            (mockReq.params) = {id:"test"} ;
 
-    //     it('should return 400 status if doctor not found', async () => {
-    //         const error = new UpdateError ('Doctor not Found', "Doctor");
-    //         const doctorReq: DoctorReq = { nombre: 'Carlos', apellido: 'Caceres',especialidad: 'Medicina General', consultorio:100};            
-    //         (mockReq.params) = {id:"1"} ;
-    //         (doctorService.updateDoctor as jest.Mock).mockRejectedValue(error)
+            await appointmentController.getAppointmentById(mockReq, mockRes)
+            
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to retrieve patient"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
 
-    //         await doctorController.updateDoctor(mockReq, mockRes)
+        })
+    })
 
-    //         expect(doctorService.updateDoctor).toHaveBeenCalledWith(1,doctorReq)
-    //         expect(mockRes.json).toHaveBeenCalledWith({error:"Doctor not Found"})
-    //         expect(mockRes.status).toHaveBeenCalledWith(400)
+    describe ('updateAppointment', () => {
+        it('should update appointment', async () => {
+            //Mock Process
+            const appointmentReq : AppointmentReq = {identificacion_paciente : "123456789", especialidad: 'Medicina General', id_doctor: 1, horario: "9:30"};
+            const appointmentRes : Appointment = {identificacion_paciente : "123456789", especialidad: 'Medicina General', consultorio:100, doctor: "Armando Puentes", horario: "9:30"};
+            
+            (mockReq.params) = {id: "1"};
+            (appointmentService.updateAppointment as jest.Mock).mockResolvedValue(appointmentRes)
+            // Method excecution
+            await appointmentController.updateAppointment(mockReq, mockRes)
+            //Asserts
+            expect(appointmentService.updateAppointment).toHaveBeenCalledWith(1,appointmentReq)
+            expect(mockRes.json).toHaveBeenCalledWith(appointmentRes)
+            expect(mockRes.status).toHaveBeenCalledWith(200)
+        })
 
-    //     })
+        it('should return 400 status if appointment not found', async () => {
+            const appointmentReq : AppointmentReq = {identificacion_paciente : "123456789", especialidad: 'Medicina General', id_doctor: 1, horario: "9:30"};
+            
+            (mockReq.params) = {id:"1"} ;
+            (appointmentService.updateAppointment as jest.Mock).mockResolvedValue(null)
+
+            await appointmentController.updateAppointment(mockReq, mockRes)
+
+            expect(appointmentService.updateAppointment).toHaveBeenCalledWith(1,appointmentReq)
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to update appointment"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
+
+        })
 
         
-    //     it('should return 400 status if an error occurs', async () => {
-    //         const error = new Error ('Internal Server Error');
-    //         const doctorReq: DoctorReq = { nombre: 'Carlos', apellido: 'Caceres',especialidad: 'Medicina General', consultorio:100};            
-    //         (mockReq.params) = {id:"1"} ;
-    //         (doctorService.updateDoctor as jest.Mock).mockRejectedValue(error)
-
-    //         await doctorController.updateDoctor(mockReq, mockRes)
-
-    //         expect(doctorService.updateDoctor).toHaveBeenCalledWith(1,doctorReq)
-    //         expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to update doctor"})
-    //         expect(mockRes.status).toHaveBeenCalledWith(400)
-    //     })
-    // })
-
-    // describe ('deleteDoctor', () => {
-    //     it('should delete doctor', async () => {
-    //         (mockReq.params) = {id: "1"};
+        it('should return 400 status if an error occurs', async () => {
+            const error = new Error ('Internal Server Error');
+            const appointmentReq : AppointmentReq = {identificacion_paciente : "123456789", especialidad: 'Medicina General', id_doctor: 1, horario: "9:30"};
             
-    //         await doctorController.deleteDoctor(mockReq, mockRes)
+            (mockReq.params) = {id:"1"} ;
+            (appointmentService.updateAppointment as jest.Mock).mockRejectedValue(error)
+
+            await appointmentController.updateAppointment(mockReq, mockRes)
+
+            expect(appointmentService.updateAppointment).toHaveBeenCalledWith(1,appointmentReq)
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to update appointment"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
+        })
+    })
+
+    describe ('deleteDoctorAppointment', () => {
+        it('should delete doctor', async () => {
+            (mockReq.params) = {id: "1"};
             
-    //         expect(doctorService.deleteDoctor).toHaveBeenCalledWith(1)
-    //         expect(mockRes.json).toHaveBeenCalledWith({message: 'Doctor was deleted succesfully'})
-    //         expect(mockRes.status).toHaveBeenCalledWith(200)
-    //     })
+            await appointmentController.deleteAppointment(mockReq, mockRes)
+            
+            expect(appointmentService.deleteAppointment).toHaveBeenCalledWith(1)
+            expect(mockRes.json).toHaveBeenCalledWith({message: 'Appointment was deleted succesfully'})
+            expect(mockRes.status).toHaveBeenCalledWith(200)
+        })
 
-    //     it('should return 400 status if doctor not found', async () => {
-    //         const error = new DeleteError ('Doctor not Found', "Doctor");
-    //         (mockReq.params) = {id:"1"} ;
-    //         (doctorService.deleteDoctor as jest.Mock).mockRejectedValue(error)
+        it('should return 400 status if appointment not found', async () => {
+            const error = new DeleteError ('Appointment not Found', "Appointment");
+            (mockReq.params) = {id:"1"} ;
+            (appointmentService.deleteAppointment as jest.Mock).mockRejectedValue(error)
 
-    //         await doctorController.deleteDoctor(mockReq, mockRes)
+            await appointmentController.deleteAppointment(mockReq, mockRes)
 
-    //         expect(doctorService.deleteDoctor).toHaveBeenCalledWith(1)
-    //         expect(mockRes.json).toHaveBeenCalledWith({error:"Doctor not Found"})
-    //         expect(mockRes.status).toHaveBeenCalledWith(400)
+            expect(appointmentService.deleteAppointment).toHaveBeenCalledWith(1)
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Appointment not Found"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
 
-    //     })
+        })
 
         
-    //     it('should return 400 status if an error occurs', async () => {
-    //         const error = new Error ('Internal Server Error');
-    //         (mockReq.params) = {id:"1"} ;
-    //         (doctorService.deleteDoctor as jest.Mock).mockRejectedValue(error)
+        it('should return 400 status if an error occurs', async () => {
+            const error = new Error ('Internal Server Error');
+            (mockReq.params) = {id:"1"} ;
+            (appointmentService.deleteAppointment as jest.Mock).mockRejectedValue(error)
 
-    //         await doctorController.deleteDoctor(mockReq, mockRes)
+            await appointmentController.deleteAppointment(mockReq, mockRes)
 
-    //         expect(doctorService.deleteDoctor).toHaveBeenCalledWith(1)
-    //         expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to delete doctor"})
-    //         expect(mockRes.status).toHaveBeenCalledWith(400)
-    //     })
-    // })
+            expect(appointmentService.deleteAppointment).toHaveBeenCalledWith(1)
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to delete appointment"})
+            expect(mockRes.status).toHaveBeenCalledWith(400)
+        })
+    })
 
 
 })
