@@ -94,3 +94,38 @@ Tiene serivicios generales que pueden ser usados por los componentes o caulquier
 * Para leer variables de entorno instalamos la libreria de dotenv **npm install dotenv** 
 
 * POSTGRES_URI=postgresql://<usuario_db>:<password_db>@<host_db>:<port_db>/<database>
+
+
+## Test unitarios
+
+Para configurar y crear los test unitarios, debemos instalar un librería llamada chai de la siguiente forma:
+
+**npm install --save-dev  chai chai-http chai-spies @types/chai @types/chai-http @types/chai-spies**
+
+Para la ejecución de los test se debe hacer la instalación de la librería jest:
+
+**npm install --save-dev jest ts-jest @types/jest**
+
+Para ejecutar los test se debe ejecutar el comando  **npx jest**
+
+
+## Tareas
+
+Tareas 16/06/2023
+
+* Validar que los campos del request sean los del modelo DoctorReq, y si no vienen completos decir cual falta, y sin vienen de más, no tomarlos (ok)
+* Hacer que el created_at y el updated_at se asignen de forma automática cuando se inserta un dato. (ok)
+* Completar los create y select de citas y pacientes (ok)
+
+Tareas 20/06/2023
+
+* Completar los test tanto para el service como para el controller de los componentes de pacientes y citas 
+
+ 
+Tarea Entregar taller 6
+
+* Cambiar los errores específicos por errores genéricos que se puedan adecuar. (ok)
+* Validación que la respuesta del doctor en creación de cita en el serivice sea diferente de null, si no retornar que el doctor no exisite, es decir, si el doctor no existe en la creación de la cita decir que el doctor no fue encontrado. (ok)
+* Cambiar el customErrors de config a utils (ok)
+* Completar por lo menos los test de citas o pacientes (ok)
+* Terminar el crud de citas y pacientes (ok)

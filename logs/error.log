@@ -3714,3 +3714,55 @@
 2023-07-09T19:15:24.044Z-error: Record has not found yet
 2023-07-09T19:15:24.046Z-error: Error
 2023-07-09T19:15:24.050Z-error: Record has not found yet
+2023-07-10T23:56:16.836Z-error: Failed to get appointment from service
+2023-07-10T23:56:16.837Z-error: Record has not found yet
+2023-07-11T00:28:36.819Z-error: Error
+2023-07-11T00:28:36.878Z-error: Record has not found yet
+2023-07-11T00:28:36.889Z-error: Error
+2023-07-11T00:28:36.901Z-error: Record has not found yet
+2023-07-11T00:28:36.859Z-error: Error
+2023-07-11T00:28:36.918Z-error: Record has not found yet
+2023-07-11T00:28:36.926Z-error: Error
+2023-07-11T00:28:36.938Z-error: Record has not found yet
+2023-07-11T00:28:37.231Z-error: Internal Server Error
+2023-07-11T00:28:37.285Z-error: Internal Server Error
+2023-07-11T00:28:37.290Z-error: Record has not found yet
+2023-07-11T00:28:37.293Z-error: Internal Server Error
+2023-07-11T00:28:37.300Z-error: Id must be a number
+2023-07-11T00:28:37.340Z-error: Patient not Found
+2023-07-11T00:28:37.346Z-error: Internal Server Error
+2023-07-11T00:28:37.354Z-error: Patient not Found
+2023-07-11T00:28:37.359Z-error: Internal Server Error
+2023-07-11T00:28:37.341Z-error: Internal Server Error
+2023-07-11T00:28:37.406Z-error: Internal Server Error
+2023-07-11T00:28:37.418Z-error: Record has not found yet
+2023-07-11T00:28:37.425Z-error: Internal Server Error
+2023-07-11T00:28:37.444Z-error: Doctor not Found
+2023-07-11T00:28:37.451Z-error: Internal Server Error
+2023-07-11T00:28:37.459Z-error: Doctor not Found
+2023-07-11T00:28:37.463Z-error: Internal Server Error
+2023-07-11T00:29:13.245Z-error: Error
+2023-07-11T00:29:13.285Z-error: Record has not found yet
+2023-07-11T00:29:13.294Z-error: Error
+2023-07-11T00:29:13.304Z-error: Record has not found yet
+2023-07-11T00:29:13.440Z-error: Error
+2023-07-11T00:29:13.490Z-error: Record has not found yet
+2023-07-11T00:29:13.500Z-error: Error
+2023-07-11T00:29:13.513Z-error: Record has not found yet
+2023-07-11T00:29:13.528Z-error: Internal Server Error
+2023-07-11T00:29:13.573Z-error: Internal Server Error
+2023-07-11T00:29:13.585Z-error: Record has not found yet
+2023-07-11T00:29:13.589Z-error: Internal Server Error
+2023-07-11T00:29:13.596Z-error: Id must be a number
+2023-07-11T00:29:13.615Z-error: Patient not Found
+2023-07-11T00:29:13.621Z-error: Internal Server Error
+2023-07-11T00:29:13.630Z-error: Patient not Found
+2023-07-11T00:29:13.635Z-error: Internal Server Error
+2023-07-11T00:29:13.668Z-error: Internal Server Error
+2023-07-11T00:29:13.715Z-error: Internal Server Error
+2023-07-11T00:29:13.721Z-error: Record has not found yet
+2023-07-11T00:29:13.729Z-error: Internal Server Error
+2023-07-11T00:29:13.740Z-error: Doctor not Found
+2023-07-11T00:29:13.748Z-error: Internal Server Error
+2023-07-11T00:29:13.753Z-error: Doctor not Found
+2023-07-11T00:29:13.758Z-error: Internal Server Error

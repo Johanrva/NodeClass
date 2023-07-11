@@ -26,8 +26,13 @@ export class AppointmentServiceImpl implements AppointmentService {
     }
     public async getAllAppointments(): Promise<Appointment[]> {
         try {
-            const patients = await this.appointmentRepository.getAllAppointments()
-            return patients
+            const appointments = await this.appointmentRepository.getAllAppointments()
+            var appointmentsRes : Appointment[] = []
+            for(const appointment of appointments){
+                const doctor = await this.doctorRepository.getDoctorById(appointment.id_doctor)
+                appointmentsRes.push(mapAppointment (appointment, doctor))
+            }       
+            return appointmentsRes
         } catch (error) {
             logger.error(error)
             throw new GetAllError("Failed getting appointments from service", "Appointment")

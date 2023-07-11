@@ -13,7 +13,7 @@ export class AppointmentRepository {
         }
     }
 
-    public async getAllAppointments(): Promise<Appointment[]> {
+    public async getAllAppointments(): Promise<AppointmentResDB[]> {
         try {
             const appointments : any = await db.select('*').from('citas')  
             return appointments
