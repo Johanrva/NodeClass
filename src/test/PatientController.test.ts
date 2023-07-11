@@ -24,7 +24,7 @@ describe ('PatientController', () => {
         mockRes.json = jest.fn().mockReturnThis()
     })
     
-    describe ('getAllDoctors', () => {
+    describe ('getAllPatients', () => {
         it('should get all patients', async () => {
             //Mock Process
             const patients: Patient[] = [
@@ -70,7 +70,7 @@ describe ('PatientController', () => {
             expect(mockRes.status).toHaveBeenCalledWith(201)
         })
 
-        it('should be handler a error and return 400 status when request is incorrect', async () => {
+        it('should be handler an error and return 400 status when request is incorrect', async () => {
             (mockReq.body) = {} ;
 
             await patientController.createPatient(mockReq, mockRes)
@@ -80,7 +80,7 @@ describe ('PatientController', () => {
 
         })
 
-        it('should be handler a error and return 400 status when doctor does not create', async () => {
+        it('should be handler an error and return 400 status when doctor does not create', async () => {
             //Mock Process
             const error = new CreationError ('Internal Server Error', 'Patient');
             const patientReq: PatientReq = { nombre: 'Carlos', apellido: 'Caceres', identificacion: "123456789"};
@@ -158,7 +158,7 @@ describe ('PatientController', () => {
 
         })
 
-        it('should be handler a error and return 400 status when request is NaN', async () => {
+        it('should be handler an error and return 400 status when request is NaN', async () => {
             (mockReq.params) = {id:"test"} ;
 
             await patientController.getPatientById(mockReq, mockRes)

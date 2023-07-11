@@ -8,7 +8,7 @@ const port = 8087
 
 
 // Crea un middleware para convertir
-// todos los bodies de los reques en Json
+// todos los bodies de los request en Json
 app.use(express.json())
 app.use(errorHandlerMiddleware)
 app.use('/api/v1', routes)

@@ -1,8 +1,8 @@
 import { Request, Response } from "express"
 import { AppointmentController, AppointmentControllerImpl } from "../api/components/citas/controller"
 import { AppointmentService } from "../api/components/citas/service"
-import { Appointment, AppointmentReq, AppointmentResDB } from "../api/components/citas/model"
-import { CreationError, DeleteError, UpdateError } from "../utils/customErrors"
+import { Appointment, AppointmentReq } from "../api/components/citas/model"
+import { CreationError, DeleteError } from "../utils/customErrors"
 
 const mockReq = {} as Request
 const mockRes = {} as Response
@@ -24,7 +24,7 @@ describe ('AppointmentController', () => {
         mockRes.json = jest.fn().mockReturnThis()
     })
     
-    describe ('getAllDoctors', () => {
+    describe ('getAllAppointments', () => {
         it('should get all appointments', async () => {
             //Mock Process
             const appointments: Appointment[] = [
@@ -70,7 +70,7 @@ describe ('AppointmentController', () => {
             expect(mockRes.status).toHaveBeenCalledWith(201)
         })
 
-        it('should be handler a error and return 400 status when request is incorrect', async () => {
+        it('should be handler an error and return 400 status when request is incorrect', async () => {
             (mockReq.body) = {identificacion_paciente: "123456789"} ;
 
             await appointmentController.createAppointment(mockReq, mockRes)
@@ -80,7 +80,7 @@ describe ('AppointmentController', () => {
 
         })
 
-        it('should be handler a error and return 400 status when appointment does not create', async () => {
+        it('should be handler an error and return 400 status when appointment does not create', async () => {
             //Mock Process
             const error = new CreationError ('Doctor or Patient not Found', "Appointment");
             const appointmentReq : AppointmentReq = {identificacion_paciente : "123456789", especialidad: 'Medicina General', id_doctor: 1, horario: "9:30"};
@@ -151,7 +151,7 @@ describe ('AppointmentController', () => {
             await appointmentController.getAppointmentById(mockReq, mockRes)
 
             expect(appointmentService.getAppointmentById).toHaveBeenCalledWith(1)
-            expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to retrieve patient"})
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to retrieve appointment"})
             expect(mockRes.status).toHaveBeenCalledWith(400)
 
         })
@@ -161,7 +161,7 @@ describe ('AppointmentController', () => {
 
             await appointmentController.getAppointmentById(mockReq, mockRes)
             
-            expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to retrieve patient"})
+            expect(mockRes.json).toHaveBeenCalledWith({error:"Failed to retrieve appointment"})
             expect(mockRes.status).toHaveBeenCalledWith(400)
 
         })
@@ -213,7 +213,7 @@ describe ('AppointmentController', () => {
         })
     })
 
-    describe ('deleteDoctorAppointment', () => {
+    describe ('deleteAppointment', () => {
         it('should delete doctor', async () => {
             (mockReq.params) = {id: "1"};
             

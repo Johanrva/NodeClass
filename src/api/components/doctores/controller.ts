@@ -1,4 +1,4 @@
-import {Request, Response} from 'express'
+import { Request, Response } from 'express'
 import { DoctorService } from "./service"
 import logger from '../../../utils/logger'
 import { CreationError, DeleteError, UpdateError, RecordNotFoundError } from "../../../utils/customErrors"

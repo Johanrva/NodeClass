@@ -73,7 +73,7 @@ export class AppointmentControllerImpl implements AppointmentController {
             if (error instanceof RecordNotFoundError){
                 res.status(400).json({error: error.message})
             } else {
-                res.status(400).json({error: "Failed to retrieve patient"})
+                res.status(400).json({error: "Failed to retrieve appointment"})
             }      
         }
     }

@@ -1,5 +1,5 @@
 # template_nodejs
-It is a Node JS template struct.
+It is a Node JS template struct. wrote for teacher.
 
 ## SCR
 

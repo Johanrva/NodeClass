@@ -1,12 +1,12 @@
-import {Request, Response} from 'express'
+import { Request, Response } from 'express'
 import { PatientService } from "./service"
 import logger from '../../../utils/logger'
 import { CreationError, DeleteError, UpdateError, RecordNotFoundError } from "../../../utils/customErrors"
 import { createPatientSchema } from "./validations/patient.validations"
 
 export interface PatientController {
-    getAllPatients(req: Request, res: Response): void
-    createPatient(req: Request, res: Response): void
+    getAllPatients (req: Request, res: Response): void
+    createPatient (req: Request, res: Response): void
     getPatientById (req: Request, res: Response): void
     updatePatient (req: Request, res: Response): Promise<void>
     deletePatient (req: Request, res: Response) : Promise<void>
