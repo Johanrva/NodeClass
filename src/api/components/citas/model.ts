@@ -21,6 +21,6 @@ export interface AppointmentResDB {
     especialidad: string
     id_doctor: number
     identificacion_paciente: string
-    created_at: string
-    updated_at: string
+    created_at?: string
+    updated_at?: string
 }

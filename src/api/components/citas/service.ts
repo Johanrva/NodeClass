@@ -81,8 +81,12 @@ export class AppointmentServiceImpl implements AppointmentService {
             const existAppointment = await this.appointmentRepository.getAppointmentById(id)
             if(existAppointment) {
                 updates.updated_at = new Date ()
-                await this.appointmentRepository.updateAppointment(id, updates)           
-                return this.getAppointmentById(id)
+                await this.appointmentRepository.updateAppointment(id, updates)
+                const appointmentDB = await this.appointmentRepository.getAppointmentById(id)
+                const doctor = await this.doctorRepository.getDoctorById(appointmentDB.id_doctor)
+                const updateAppointment : Appointment = mapAppointment (appointmentDB, doctor)
+                return updateAppointment
+                
             } else {
                 throw new RecordNotFoundError()
             }           

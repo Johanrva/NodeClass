@@ -4415,3 +4415,334 @@ info: [object Object],[object Object]
 2023-07-11T22:55:00.853Z-error: Internal Server Error
 2023-07-11T22:55:00.856Z-error: Appointment not Found
 2023-07-11T22:55:00.858Z-error: Internal Server Error
+2023-07-12T00:48:15.642Z-error: Cannot read properties of undefined (reading 'nombre')
+2023-07-12T00:50:22.765Z-error: appointments is not iterable
+2023-07-12T01:25:43.661Z-error: Cannot read properties of undefined (reading 'nombre')
+2023-07-12T01:32:27.098Z-error: appointments is not iterable
+2023-07-12T01:37:40.316Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T01:39:06.912Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T01:41:43.469Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T01:51:35.079Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T01:52:03.544Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T01:52:22.379Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T01:53:35.665Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T01:53:35.686Z-error: Cannot read properties of undefined (reading 'identificacion_paciente')
+2023-07-12T01:54:31.955Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T01:54:31.975Z-error: Cannot read properties of undefined (reading 'identificacion_paciente')
+2023-07-12T01:55:48.917Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T01:55:48.945Z-error: Cannot read properties of undefined (reading 'identificacion_paciente')
+2023-07-12T01:58:04.825Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T01:58:04.980Z-error: Cannot read properties of undefined (reading 'identificacion_paciente')
+2023-07-12T01:59:15.181Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T01:59:15.277Z-error: Record has not found yet
+2023-07-12T01:59:41.452Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T01:59:41.547Z-error: Cannot read properties of undefined (reading 'identificacion_paciente')
+2023-07-12T02:02:30.892Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:04:05.446Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:05:34.055Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:09:01.315Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:09:01.343Z-error: Record has not found yet
+2023-07-12T02:09:40.413Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:09:40.446Z-error: Record has not found yet
+2023-07-12T02:11:09.131Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:11:09.161Z-error: Record has not found yet
+2023-07-12T02:11:53.758Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:11:53.787Z-error: Record has not found yet
+2023-07-12T02:12:36.214Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:12:36.240Z-error: Record has not found yet
+2023-07-12T02:13:22.931Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:13:22.966Z-error: Internal Server Error
+2023-07-12T02:14:05.016Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:14:05.045Z-error: Failed to create appointment
+2023-07-12T02:14:25.469Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:14:25.501Z-error: Failed to create appointment
+2023-07-12T02:17:33.880Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:17:33.904Z-error: Record has not found yet
+2023-07-12T02:17:33.930Z-error: Failed to create appointment
+2023-07-12T02:18:01.050Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:18:01.084Z-error: Record has not found yet
+2023-07-12T02:18:01.087Z-error: Failed to create appointment
+2023-07-12T02:19:32.334Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:19:32.357Z-error: Record has not found yet
+2023-07-12T02:19:32.360Z-error: Failed to create appointment
+2023-07-12T02:21:17.915Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:21:18.069Z-error: Record has not found yet
+2023-07-12T02:21:18.091Z-error: Failed to create appointment
+2023-07-12T02:26:03.764Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:26:03.811Z-error: Record has not found yet
+2023-07-12T02:26:03.817Z-error: Failed to create appointment
+2023-07-12T02:27:50.961Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:27:50.985Z-error: Record has not found yet
+2023-07-12T02:27:50.990Z-error: Failed to create appointment
+2023-07-12T02:28:10.883Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:28:10.909Z-error: Record has not found yet
+2023-07-12T02:28:10.913Z-error: Failed to create appointment
+2023-07-12T02:28:33.286Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:28:33.314Z-error: Record has not found yet
+2023-07-12T02:28:33.319Z-error: Failed to create appointment
+2023-07-12T02:28:51.623Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:28:51.661Z-error: Record has not found yet
+2023-07-12T02:28:51.665Z-error: Failed to create appointment
+2023-07-12T02:30:56.706Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:30:56.736Z-error: Record has not found yet
+2023-07-12T02:30:56.741Z-error: Failed to create appointment
+2023-07-12T02:30:56.750Z-error: Failed to get appointment from service
+2023-07-12T02:32:06.542Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:32:06.567Z-error: Record has not found yet
+2023-07-12T02:32:06.570Z-error: Failed to create appointment
+2023-07-12T02:32:06.578Z-error: Failed to get appointment from service
+2023-07-12T02:33:29.264Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:33:29.288Z-error: Record has not found yet
+2023-07-12T02:33:29.295Z-error: Failed to create appointment
+2023-07-12T02:33:29.308Z-error: Failed to get appointment from service
+2023-07-12T02:36:29.229Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:36:29.275Z-error: Record has not found yet
+2023-07-12T02:36:29.278Z-error: Failed to create appointment
+2023-07-12T02:37:06.435Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:37:06.462Z-error: Record has not found yet
+2023-07-12T02:37:06.466Z-error: Failed to create appointment
+2023-07-12T02:37:06.473Z-error: Failed to get appointment from service
+2023-07-12T02:38:00.536Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:38:00.563Z-error: Record has not found yet
+2023-07-12T02:38:00.568Z-error: Failed to create appointment
+2023-07-12T02:38:00.573Z-error: Failed to get appointment from service
+2023-07-12T02:39:12.700Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:39:12.731Z-error: Record has not found yet
+2023-07-12T02:39:12.734Z-error: Failed to create appointment
+2023-07-12T02:39:12.741Z-error: Failed to get appointment from service
+2023-07-12T02:40:01.110Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:40:01.239Z-error: Record has not found yet
+2023-07-12T02:40:01.259Z-error: Failed to create appointment
+2023-07-12T02:40:01.272Z-error: Failed to get appointment from service
+2023-07-12T02:40:38.018Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:40:38.061Z-error: Record has not found yet
+2023-07-12T02:40:38.066Z-error: Failed to create appointment
+2023-07-12T02:40:38.072Z-error: Failed to get appointment from service
+2023-07-12T02:45:36.493Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:45:36.532Z-error: Record has not found yet
+2023-07-12T02:45:36.535Z-error: Failed to create appointment
+2023-07-12T02:45:36.542Z-error: Failed to get appointment from service
+2023-07-12T02:45:36.545Z-error: Failed to get appointment from service
+2023-07-12T02:49:10.844Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:49:10.869Z-error: Record has not found yet
+2023-07-12T02:49:10.873Z-error: Failed to create appointment
+2023-07-12T02:49:10.880Z-error: Failed to get appointment from service
+2023-07-12T02:49:10.883Z-error: Failed to get appointment from service
+2023-07-12T02:49:10.885Z-error: Record has not found yet
+2023-07-12T02:53:10.091Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T02:53:10.117Z-error: Record has not found yet
+2023-07-12T02:53:10.122Z-error: Failed to create appointment
+2023-07-12T02:53:10.129Z-error: Failed to get appointment from service
+2023-07-12T03:00:07.635Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T03:00:07.668Z-error: Record has not found yet
+2023-07-12T03:00:07.673Z-error: Failed to create appointment
+2023-07-12T03:00:07.679Z-error: Failed to get appointment from service
+2023-07-12T03:03:51.826Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T03:03:51.852Z-error: Record has not found yet
+2023-07-12T03:03:51.857Z-error: Failed to create appointment
+2023-07-12T03:03:51.862Z-error: Failed to get appointment from service
+2023-07-12T15:38:09.473Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T15:38:09.518Z-error: Record has not found yet
+2023-07-12T15:38:09.522Z-error: Failed to create appointment
+2023-07-12T15:38:09.534Z-error: Failed to get appointment from service
+2023-07-12T15:55:54.187Z-info: Server is listening on port 8087
+2023-07-12T15:56:48.089Z-error: Record has not found yet
+2023-07-12T15:56:48.090Z-error: Appointment not Found
+2023-07-12T15:56:57.114Z-error: Record has not found yet
+2023-07-12T15:56:57.115Z-error: Appointment not Found
+2023-07-12T15:57:24.875Z-error: Record has not found yet
+2023-07-12T15:57:24.876Z-error: Appointment not Found
+2023-07-12T15:58:21.620Z-info: Server is listening on port 8087
+2023-07-12T16:06:22.999Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:06:23.034Z-error: Record has not found yet
+2023-07-12T16:06:23.038Z-error: Failed to create appointment
+2023-07-12T16:06:23.045Z-error: Failed to get appointment from service
+2023-07-12T16:14:06.576Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:14:06.610Z-error: Record has not found yet
+2023-07-12T16:14:06.616Z-error: Failed to create appointment
+2023-07-12T16:14:06.621Z-error: Failed to get appointment from service
+2023-07-12T16:16:07.169Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:16:07.198Z-error: Record has not found yet
+2023-07-12T16:16:07.202Z-error: Failed to create appointment
+2023-07-12T16:16:07.206Z-error: Failed to get appointment from service
+2023-07-12T16:16:07.212Z-error: Error
+2023-07-12T16:17:15.984Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:17:16.012Z-error: Record has not found yet
+2023-07-12T16:17:16.017Z-error: Failed to create appointment
+2023-07-12T16:17:16.022Z-error: Failed to get appointment from service
+2023-07-12T16:17:16.028Z-error: Error
+2023-07-12T16:17:38.177Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:17:38.203Z-error: Record has not found yet
+2023-07-12T16:17:38.207Z-error: Failed to create appointment
+2023-07-12T16:17:38.213Z-error: Failed to get appointment from service
+2023-07-12T16:17:38.219Z-error: Error
+2023-07-12T16:21:12.924Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:21:12.957Z-error: Record has not found yet
+2023-07-12T16:21:12.961Z-error: Failed to create appointment
+2023-07-12T16:21:12.967Z-error: Failed to get appointment from service
+2023-07-12T16:21:12.973Z-error: Error
+2023-07-12T16:21:12.976Z-error: Record has not found yet
+2023-07-12T16:22:11.604Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:22:11.633Z-error: Record has not found yet
+2023-07-12T16:22:11.636Z-error: Failed to create appointment
+2023-07-12T16:22:11.643Z-error: Failed to get appointment from service
+2023-07-12T16:22:11.648Z-error: Error
+2023-07-12T16:22:11.651Z-error: Record has not found yet
+2023-07-12T16:26:35.935Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:26:35.968Z-error: Record has not found yet
+2023-07-12T16:26:35.974Z-error: Failed to create appointment
+2023-07-12T16:26:35.981Z-error: Failed to get appointment from service
+2023-07-12T16:26:35.989Z-error: Error
+2023-07-12T16:26:35.994Z-error: Record has not found yet
+2023-07-12T16:29:54.546Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:29:54.594Z-error: Record has not found yet
+2023-07-12T16:29:54.597Z-error: Failed to create appointment
+2023-07-12T16:29:54.608Z-error: Failed to get appointment from service
+2023-07-12T16:29:54.613Z-error: Error
+2023-07-12T16:29:54.625Z-error: Record has not found yet
+2023-07-12T16:30:20.280Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:30:20.306Z-error: Record has not found yet
+2023-07-12T16:30:20.311Z-error: Failed to create appointment
+2023-07-12T16:30:20.318Z-error: Failed to get appointment from service
+2023-07-12T16:30:20.323Z-error: Error
+2023-07-12T16:30:20.328Z-error: Record has not found yet
+2023-07-12T16:31:39.973Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:31:40.002Z-error: Record has not found yet
+2023-07-12T16:31:40.006Z-error: Failed to create appointment
+2023-07-12T16:31:40.013Z-error: Failed to get appointment from service
+2023-07-12T16:31:40.019Z-error: Error
+2023-07-12T16:31:40.022Z-error: Record has not found yet
+2023-07-12T16:31:40.028Z-error: Error
+2023-07-12T16:32:07.617Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:32:07.649Z-error: Record has not found yet
+2023-07-12T16:32:07.653Z-error: Failed to create appointment
+2023-07-12T16:32:07.660Z-error: Failed to get appointment from service
+2023-07-12T16:32:07.664Z-error: Error
+2023-07-12T16:32:07.670Z-error: Record has not found yet
+2023-07-12T16:32:07.676Z-error: Error
+2023-07-12T16:33:00.942Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:33:00.974Z-error: Record has not found yet
+2023-07-12T16:33:00.991Z-error: Failed to create appointment
+2023-07-12T16:33:00.998Z-error: Failed to get appointment from service
+2023-07-12T16:33:01.005Z-error: Error
+2023-07-12T16:33:01.010Z-error: Record has not found yet
+2023-07-12T16:33:01.017Z-error: Error
+2023-07-12T16:33:01.021Z-error: Record has not found yet
+2023-07-12T16:34:26.172Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:34:26.229Z-error: Record has not found yet
+2023-07-12T16:34:26.243Z-error: Failed to create appointment
+2023-07-12T16:34:26.284Z-error: Failed to get appointment from service
+2023-07-12T16:34:26.294Z-error: Error
+2023-07-12T16:34:26.297Z-error: Record has not found yet
+2023-07-12T16:34:26.308Z-error: Error
+2023-07-12T16:34:26.312Z-error: Record has not found yet
+2023-07-12T16:34:45.236Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:34:45.269Z-error: Record has not found yet
+2023-07-12T16:34:45.272Z-error: Failed to create appointment
+2023-07-12T16:34:45.278Z-error: Failed to get appointment from service
+2023-07-12T16:34:45.285Z-error: Error
+2023-07-12T16:34:45.290Z-error: Record has not found yet
+2023-07-12T16:34:45.295Z-error: Error
+2023-07-12T16:34:45.299Z-error: Record has not found yet
+2023-07-12T16:35:02.768Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:35:02.797Z-error: Record has not found yet
+2023-07-12T16:35:02.801Z-error: Failed to create appointment
+2023-07-12T16:35:02.808Z-error: Failed to get appointment from service
+2023-07-12T16:35:02.813Z-error: Error
+2023-07-12T16:35:02.818Z-error: Record has not found yet
+2023-07-12T16:35:02.825Z-error: Error
+2023-07-12T16:35:02.829Z-error: Record has not found yet
+2023-07-12T16:35:15.611Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:35:15.644Z-error: Record has not found yet
+2023-07-12T16:35:15.648Z-error: Failed to create appointment
+2023-07-12T16:35:15.655Z-error: Failed to get appointment from service
+2023-07-12T16:35:15.662Z-error: Error
+2023-07-12T16:35:15.667Z-error: Record has not found yet
+2023-07-12T16:35:15.675Z-error: Error
+2023-07-12T16:35:15.680Z-error: Record has not found yet
+2023-07-12T16:36:08.012Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:36:08.159Z-error: Record has not found yet
+2023-07-12T16:36:08.164Z-error: Failed to create appointment
+2023-07-12T16:36:08.182Z-error: Failed to get appointment from service
+2023-07-12T16:36:08.200Z-error: Error
+2023-07-12T16:36:08.214Z-error: Record has not found yet
+2023-07-12T16:36:08.226Z-error: Error
+2023-07-12T16:36:08.247Z-error: Record has not found yet
+2023-07-12T16:36:08.366Z-error: Error
+2023-07-12T16:36:08.439Z-error: Record has not found yet
+2023-07-12T16:36:08.452Z-error: Error
+2023-07-12T16:36:08.490Z-error: Record has not found yet
+2023-07-12T16:36:08.595Z-error: Internal Server Error
+2023-07-12T16:36:08.711Z-error: Internal Server Error
+2023-07-12T16:36:08.726Z-error: Record has not found yet
+2023-07-12T16:36:08.732Z-error: Internal Server Error
+2023-07-12T16:36:08.752Z-error: Doctor not Found
+2023-07-12T16:36:08.764Z-error: Internal Server Error
+2023-07-12T16:36:08.775Z-error: Doctor not Found
+2023-07-12T16:36:08.779Z-error: Internal Server Error
+2023-07-12T16:36:09.166Z-error: Internal Server Error
+2023-07-12T16:36:09.232Z-error: Internal Server Error
+2023-07-12T16:36:09.238Z-error: Record has not found yet
+2023-07-12T16:36:09.244Z-error: Internal Server Error
+2023-07-12T16:36:09.250Z-error: Id must be a number
+2023-07-12T16:36:09.301Z-error: Patient not Found
+2023-07-12T16:36:09.307Z-error: Internal Server Error
+2023-07-12T16:36:09.314Z-error: Patient not Found
+2023-07-12T16:36:09.318Z-error: Internal Server Error
+2023-07-12T16:36:09.273Z-error: Error
+2023-07-12T16:36:09.441Z-error: Record has not found yet
+2023-07-12T16:36:09.451Z-error: Error
+2023-07-12T16:36:09.458Z-error: Record has not found yet
+2023-07-12T16:36:09.778Z-error: Internal Server Error
+2023-07-12T16:36:09.800Z-error: Doctor or Patient not Found
+2023-07-12T16:36:09.803Z-error: Internal Server Error
+2023-07-12T16:36:09.806Z-error: Record has not found yet
+2023-07-12T16:36:09.809Z-error: Internal Server Error
+2023-07-12T16:36:09.812Z-error: Id must be a number
+2023-07-12T16:36:09.822Z-error: Failed to update appointment
+2023-07-12T16:36:09.824Z-error: Internal Server Error
+2023-07-12T16:36:09.827Z-error: Appointment not Found
+2023-07-12T16:36:09.829Z-error: Internal Server Error
+2023-07-12T16:36:44.140Z-error: Error
+2023-07-12T16:36:44.187Z-error: Record has not found yet
+2023-07-12T16:36:44.200Z-error: Error
+2023-07-12T16:36:44.206Z-error: Record has not found yet
+2023-07-12T16:36:44.333Z-error: Error
+2023-07-12T16:36:44.364Z-error: Record has not found yet
+2023-07-12T16:36:44.427Z-error: Error
+2023-07-12T16:36:44.436Z-error: Record has not found yet
+2023-07-12T16:36:44.756Z-error: Internal Server Error
+2023-07-12T16:36:44.793Z-error: Internal Server Error
+2023-07-12T16:36:44.805Z-error: Record has not found yet
+2023-07-12T16:36:44.810Z-error: Internal Server Error
+2023-07-12T16:36:44.818Z-error: Id must be a number
+2023-07-12T16:36:44.832Z-error: Patient not Found
+2023-07-12T16:36:44.838Z-error: Internal Server Error
+2023-07-12T16:36:44.846Z-error: Patient not Found
+2023-07-12T16:36:44.859Z-error: Internal Server Error
+2023-07-12T16:36:44.726Z-error: Cannot read properties of undefined (reading 'appointmentRepository')
+2023-07-12T16:36:44.818Z-error: Record has not found yet
+2023-07-12T16:36:44.823Z-error: Failed to create appointment
+2023-07-12T16:36:44.832Z-error: Failed to get appointment from service
+2023-07-12T16:36:44.843Z-error: Error
+2023-07-12T16:36:44.850Z-error: Record has not found yet
+2023-07-12T16:36:44.866Z-error: Error
+2023-07-12T16:36:44.871Z-error: Record has not found yet
+2023-07-12T16:36:44.922Z-error: Internal Server Error
+2023-07-12T16:36:44.961Z-error: Internal Server Error
+2023-07-12T16:36:44.977Z-error: Record has not found yet
+2023-07-12T16:36:44.987Z-error: Internal Server Error
+2023-07-12T16:36:44.998Z-error: Doctor not Found
+2023-07-12T16:36:45.004Z-error: Internal Server Error
+2023-07-12T16:36:45.014Z-error: Doctor not Found
+2023-07-12T16:36:45.019Z-error: Internal Server Error
+2023-07-12T16:36:45.021Z-error: Internal Server Error
+2023-07-12T16:36:45.076Z-error: Doctor or Patient not Found
+2023-07-12T16:36:45.086Z-error: Internal Server Error
+2023-07-12T16:36:45.092Z-error: Record has not found yet
+2023-07-12T16:36:45.098Z-error: Internal Server Error
+2023-07-12T16:36:45.104Z-error: Id must be a number
+2023-07-12T16:36:45.117Z-error: Failed to update appointment
+2023-07-12T16:36:45.120Z-error: Internal Server Error
+2023-07-12T16:36:45.124Z-error: Appointment not Found
+2023-07-12T16:36:45.126Z-error: Internal Server Error
