@@ -135,7 +135,7 @@ describe ('PatientService', () => {
         it('should throw an error if patient updating fails', async () => {
             //Mock Process 
             const patientReq: PatientReq = {nombre: 'Carlos', apellido: 'Caceres', identificacion: "123456789"};
-            const error1 = new UpdateError ('Failed to update patient', 'Doctor');
+            const error1 = new UpdateError ('Failed to update patient', 'Patient');
             const id = 1;
             (patientRepository.getPatientById as jest.Mock).mockRejectedValue(new Error())
             
